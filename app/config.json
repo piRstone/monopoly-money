@@ -1,7 +1,8 @@
 {
-	"build_dir": "build",
+	"build_dir": "src/assets/js",
 	"compile_dir": "dist",
 	"merge_dir": "merge",
+	"proj_dir": "src",
 	"apiBaseUrl": "/data",
 	"domainName": "monopoly-money",
 
@@ -11,7 +12,8 @@
 		"js": [
 			"vendor/jquery/jquery.js",
 			"vendor/angular/angular.js",
-			"vendor/restangular/dist/restangular.js"
+			"vendor/restangular/dist/restangular.js",
+			"vendor/angular-ui-router/release/angular-ui-router.js"
 		]
 	}
 }

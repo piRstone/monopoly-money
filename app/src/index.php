@@ -9,19 +9,16 @@
 
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/home.css"/>
-		<link rel="stylesheet" type="text/css" href="assets/css/monopoly.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-additions.min.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/angular-motion.css"/>
 	</head>
 	<body id="ng-app" ng-app="monopoly">
 		<h1>Monopoly Money</h1>
-		<div ng-controller="AppCtrl">
+		<div id="monopoly-root" ui-view autoscroll="false"></div>
+		<!-- <div ng-controller="AppCtrl">
 			<p>{{ text }}</p>
-		</div>
 
-		<script src="assets/js/angular/angular.js"></script>
-		<script src="assets/js/jquery/jquery.js"></script>
-		<!-- <script src="assets/js/restangular/dist/restangular.js"></script> -->
-		<script src="app/app.js"></script>
+			<script src="assets/js/monopoly.js"></script>
+		</div> -->
 	</body>
 </html>

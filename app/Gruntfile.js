@@ -9,9 +9,21 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: '<%= config.merge_dir %>/sass',
-					cssDir: '<%= config.merge_dir %>/assets/css'
+					sassDir: '<%= config.proj_dir %>/sass',
+					cssDir: '<%= config.proj_dir %>/assets/css'
 				}
+			}
+		},
+
+		concat: {
+			js: {
+				src: [
+					'<%= config.vendor_files.js %>',
+					'module.prefix',
+					'<%= config.proj_dir %>/app/*.js',
+					'module.suffix'
+				],
+				dest: '<%= config.proj_dir %>/assets/js/monopoly.js'
 			}
 		},
 
@@ -23,6 +35,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('build-dev', ['compass']);
+	grunt.registerTask('build-dev', ['compass', 'concat:js']);
 	grunt.registerTask('default', ['build-dev']);
 };
