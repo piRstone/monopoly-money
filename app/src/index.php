@@ -15,10 +15,10 @@
 	<body id="ng-app" ng-app="monopoly">
 		<h1>Monopoly Money</h1>
 		<div id="monopoly-root" ui-view autoscroll="false"></div>
-		<!-- <div ng-controller="AppCtrl">
+		<div ng-controller="AppCtrl">
 			<p>{{ text }}</p>
 
 			<script src="assets/js/monopoly.js"></script>
-		</div> -->
+		</div>
 	</body>
 </html>

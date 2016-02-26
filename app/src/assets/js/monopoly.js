@@ -41750,5 +41750,30 @@ angular.module('monopoly', [
 .controller('AppCtrl',['$scope', function($scope) {
 	$scope.text = 'Bonjour';
 }])
+
 ;
+angular.module('monopoly.header', [])
+
+.controller('HeaderCtrl', ['$scope', function($scope) {
+	$scope.headerText = "headerText";
+}])
+
+;
+angular.module('monopoly.page', ['ui.router'])
+
+.config(['$stateProvider', function($stateProvider) {
+	$stateProvider.state('app.backbone.page', {
+		url: "/page",
+		views: {
+			'backbone@app': {
+				controller: 'PageCtrl',
+				templateUrl: 'page/page.tpl.html'
+			}
+		}
+	});
+}])
+
+.controller('PageCtrl', ['$scope', function($scope) {
+	$scope.pageText = "pageText";
+}])
 })(window, window.angular);

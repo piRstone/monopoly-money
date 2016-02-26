@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 					'<%= config.vendor_files.js %>',
 					'module.prefix',
 					'<%= config.proj_dir %>/app/*.js',
+					'<%= config.proj_dir %>/app/*/*.js',
 					'module.suffix'
 				],
 				dest: '<%= config.proj_dir %>/assets/js/monopoly.js'
