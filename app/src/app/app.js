@@ -6,6 +6,7 @@ angular.module('monopoly', [
 ])
 
 .config(['$stateProvider', function($stateProvider) {
+
 	$stateProvider.state('app', {
 		abstract: true,
 		templateUrl: 'app.tpl.html',
@@ -16,16 +17,20 @@ angular.module('monopoly', [
 		abstract: true,
 		views: {
 	    	header: {
-	    	controller: 'HeaderCtrl',
-	    	templateUrl: 'header/header.tpl.html'
+		    	controller: 'HeaderCtrl',
+		    	templateUrl: 'header/header.tpl.html'
 	    	}
 	    }
-	})
+	});
+}])
+
+.config(['$urlRouterProvider', function($urlRouterProvider) {
+	$urlRouterProvider.otherwise('/');
 }])
 
 
-.controller('AppCtrl',['$scope', function($scope) {
-	$scope.text = 'Bonjour';
+.controller('AppCtrl',['$rootScope', '$scope', function($rootScope, $scope) {
+	$scope.text = 'Bonjour ui-view';
 }])
 
 ;

@@ -13,7 +13,8 @@
 			"vendor/jquery/jquery.js",
 			"vendor/angular/angular.js",
 			"vendor/restangular/dist/restangular.js",
-			"vendor/angular-ui-router/release/angular-ui-router.js"
+			"vendor/angular-ui-router/release/angular-ui-router.js",
+			"vendor/lodash/dist/lodash.js"
 		]
 	}
 }
