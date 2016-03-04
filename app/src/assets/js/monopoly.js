@@ -48554,7 +48554,7 @@ angular.module('monopoly.header', [])
 angular.module('monopoly.page', ['ui.router'])
 
 .config(['$stateProvider', function($stateProvider) {
-	$stateProvider.state('app.backbone', {
+	$stateProvider.state('app.backbone.page', {
 		url: "/page",
 		views: {
 			'backbone@app': {

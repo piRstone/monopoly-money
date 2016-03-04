@@ -12,14 +12,14 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-additions.min.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/angular-motion.css"/>
 
-		<script src="assets/js/monopoly.js"></script>
 	</head>
-	<body id="ng-app" ng-app="monopoly">
+	<body ng-app="monopoly">
 		<h1>Monopoly Money</h1>
 		<div id="monopoly-root" ui-view></div>
 		
 		<!-- <div ng-controller="AppCtrl">
 			<p>{{ text }}</p>
 		</div> -->
+		<script src="monopoly.js"></script>
 	</body>
 </html>

@@ -24,7 +24,24 @@ module.exports = function(grunt) {
 					'<%= config.proj_dir %>/app/*/*.js',
 					'module.suffix'
 				],
-				dest: '<%= config.proj_dir %>/assets/js/monopoly.js'
+				dest: '<%= config.proj_dir %>/../build/monopoly.js'
+			}
+		},
+
+		copy: {
+			templates: {
+				src: '**',
+				dest: '<%= config.proj_dir %>/../build/',
+				cwd: 'src/app',
+				expand: true,
+				dot: true
+			},
+			index:{
+				src: 'index.php',
+				dest: '<%= config.proj_dir %>/../build/',
+				cwd: 'src/',
+				expand: true,
+				dot: true
 			}
 		},
 
@@ -36,6 +53,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('build-dev', ['compass', 'concat:js']);
+	grunt.registerTask('build-dev', ['compass', 'concat:js', 'copy']);
 	grunt.registerTask('default', ['build-dev']);
 };
