@@ -8,17 +8,27 @@ angular.module('monopoly.gameService', [])
 		$http({
 			method: 'GET',
 			url: '/data/getProperties.php'
-		}).then(function (response) {
+		}).then(function(response) {
 			for (i=0 ; i < response.data.length ; i++) {
 				properties.push(response.data[i]);
 			}
 		}, function(error){});
 	}
 
+	var getBuyableProperties = function(success, error) {
+		$http({
+			method: 'GET',
+			url: '/data/getBuyableProperties.php'
+		}).then(function(response) {
+			success(response.data);
+		}, function(error) {});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
-		getProperties, getProperties
+		getProperties, getProperties,
+		getBuyableProperties: getBuyableProperties
 	};
 }])
 

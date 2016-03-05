@@ -7,21 +7,10 @@
 	top: 0;
 	left: 0;
 	.add-menu {
-		position: absolute;
-		top: -30px;
-		left: -30px;
-		height: 130px;
-		width: 130px;
-		background-color: #EA703F;
-		border-radius: 50%;
-		text-align: center;
-		padding: 43px;
-		box-sizing: border-box;
-		color: #fff;
-		font-size: 40px;
-		box-shadow: 2px 2px 5px rgba(0,0,0,.3);
-		&:active {
-			background-color: #f00;
+		display: block;
+		padding: 11px;
+		img {
+			height: 50px;
 		}
 	}
 	.credit-amount {

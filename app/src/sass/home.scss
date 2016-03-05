@@ -21,13 +21,19 @@ footer {
 		padding-bottom: 9px;
 		&.add-money {
 			bottom: 20px;
-			right: 22%;
+			right: 80px;
 			background-color: #8BC34A;
+			&:active {
+				background-color: darken(#8BC34A, 10%);
+			}
 		}
 		&.del-money {
 			bottom: 20px;
-			right: 5%;
+			right: 10px;
 			background-color: #F44336;
+			&:active {
+				background-color: darken(#F44336, 10%);
+			}
 		}
 	}
 }

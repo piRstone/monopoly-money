@@ -1,0 +1,112 @@
+/* Buy style */
+#buy {
+	margin-top: 70px;
+	width: 100%;
+	position: relative;
+	.title {
+		font-size: 20px;
+		text-align: center;
+		margin-bottom: 20px;
+		padding: 10px;
+		background-color: whitesmoke;
+		box-shadow: 0px 0 7px rgba(0,0,0,.4);
+	}
+	.buy-prop {
+		padding: 20px 10px;
+		font-size: 20px;
+		color: #fff;
+		&.black {
+			color: #000;
+		}
+		p {
+			float: left;
+			width: 80%;
+		}
+		.price {
+			float: right;
+		}
+	}
+
+	.modalBackground {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 5;
+		background-color: rgba(0,0,0,.6);
+	}
+	.modalCard {
+		position: absolute;
+		background-color: #fff;
+		box-shadow: 0 0 5px rgba(0,0,0,.5);
+		z-index: 6;
+		top: 14%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 10px;
+		border-radius: 5px;
+		border: 1px solid #CACACA;
+		width: 80%;
+		.m-box {
+			border: 1px solid #000;
+			padding: 2px;
+			.m-title {
+				background-color: rgb(135, 206, 234);
+				padding: 10px;
+				text-align: center;
+				border: 1px solid #000;
+				text-transform: uppercase;
+				p:nth-child(1) {
+					font-size: 14px;
+				}
+				p:nth-child(2) {
+					font-size: 20px;
+					font-weight: bold;
+					margin-top: 5px;
+				}
+			}
+			.prices {
+				padding: 10px 0;
+				table {
+					width: 100%;
+					tr {
+						margin-bottom: 4px;
+						td {
+							padding: 2px 0;
+							&:nth-child(1) {
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+			.info {
+				text-align: center;
+				border-top: 1px solid;
+				border-bottom: 1px solid;
+				padding: 10px;
+				margin: 0 4px;
+				p {
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+			.houses {
+				padding: 10px;
+				table {
+					width: 100%;
+					tr {
+						td {
+							font-weight: bold;
+							span {
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

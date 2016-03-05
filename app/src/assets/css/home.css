@@ -27,12 +27,20 @@ footer button {
 /* line 22, ../../sass/home.scss */
 footer button.add-money {
   bottom: 20px;
-  right: 22%;
+  right: 80px;
   background-color: #8BC34A;
 }
-/* line 27, ../../sass/home.scss */
+/* line 26, ../../sass/home.scss */
+footer button.add-money:active {
+  background-color: #71a436;
+}
+/* line 30, ../../sass/home.scss */
 footer button.del-money {
   bottom: 20px;
-  right: 5%;
+  right: 10px;
   background-color: #F44336;
+}
+/* line 34, ../../sass/home.scss */
+footer button.del-money:active {
+  background-color: #ea1c0d;
 }

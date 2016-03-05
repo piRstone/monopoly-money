@@ -1,0 +1,10 @@
+/* line 1, ../../sass/configuration.scss */
+body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+/* line 6, ../../sass/configuration.scss */
+.clear {
+  clear: both;
+}

@@ -12,4 +12,6 @@ while ($data = $res->fetch()) {
 
 echo json_encode($response);
 
+$res->closeCursor();
+
 ?>

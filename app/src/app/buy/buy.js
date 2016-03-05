@@ -12,8 +12,44 @@ angular.module('monopoly.buy', ['ui.router'])
 	});
 }])
 
-.controller('BuyCtrl', ['$scope', function($scope) {
-	
+.controller('BuyCtrl', ['$scope', 'GameService', function($scope, GameService) {
+	$scope.showCard = false;
+	$scope.properties = [];
+	$scope.card = {};
+	//$scope.properties = [{name: 'Boulevard de Belleville', price: 60, color: '#f96632'}, {name: 'La villette', price: 120, color: '#22d299'}];
+
+	var getProperties = function() {
+		GameService.getBuyableProperties(function(response) {
+			for (i=0 ; i < response.length ; i++) {
+				var obj = {};
+				obj.id = response[i].id;
+				obj.name = response[i].name;
+				obj.price = response[i].price;
+				obj.color = response[i].color;
+				obj.h0 = response[i].h0;
+				obj.h1 = response[i].h1;
+				obj.h2 = response[i].h2;
+				obj.h3 = response[i].h3;
+				obj.h4 = response[i].h4;
+				obj.h5 = response[i].h5;
+				obj.g1 = response[i].g1;
+				obj.g2 = response[i].g2;
+				obj.g3 = response[i].g3;
+				obj.g4 = response[i].g4;
+				obj.house = response[i].house;
+				obj.hypotheque = response[i].hypotheque;
+				$scope.properties.push(obj);
+			}
+		}, function() {});
+	}
+
+	$scope.showPropertyCard = function(index) {
+		$scope.card = $scope.properties[index];
+		$scope.showCard = true;
+		console.log($scope.card);
+	}
+
+	getProperties();
 }])
 
 ;

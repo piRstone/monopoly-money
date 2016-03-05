@@ -10,25 +10,14 @@
 }
 /* line 9, ../../sass/header.scss */
 #header .add-menu {
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  height: 130px;
-  width: 130px;
-  background-color: #EA703F;
-  border-radius: 50%;
-  text-align: center;
-  padding: 43px;
-  box-sizing: border-box;
-  color: #fff;
-  font-size: 40px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: 11px;
 }
-/* line 23, ../../sass/header.scss */
-#header .add-menu:active {
-  background-color: #f00;
+/* line 12, ../../sass/header.scss */
+#header .add-menu img {
+  height: 50px;
 }
-/* line 27, ../../sass/header.scss */
+/* line 16, ../../sass/header.scss */
 #header .credit-amount {
   position: absolute;
   top: 12px;
