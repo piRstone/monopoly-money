@@ -1,5 +1,5 @@
 {
-	"build_dir": "src/assets/js",
+	"build_dir": "build",
 	"compile_dir": "dist",
 	"merge_dir": "merge",
 	"proj_dir": "src",

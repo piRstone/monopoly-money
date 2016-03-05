@@ -2,3 +2,32 @@ body {
 	font-family: Helvetica;
 	font-size: 14px;
 }
+
+/* Footer style */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	button {
+		position: absolute;
+		border-radius: 50%;
+		border: none;
+		box-sizing: border-box;
+		color: #fff;
+		font-size: 30px;
+		height: 60px;
+		width: 60px;
+		padding-bottom: 9px;
+		&.add-money {
+			bottom: 20px;
+			right: 22%;
+			background-color: #8BC34A;
+		}
+		&.del-money {
+			bottom: 20px;
+			right: 5%;
+			background-color: #F44336;
+		}
+	}
+}

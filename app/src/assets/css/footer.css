@@ -1,0 +1,29 @@
+/* Footer style */
+/* line 2, ../../sass/footer.scss */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 7, ../../sass/footer.scss */
+footer button {
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 12px;
+}
+/* line 14, ../../sass/footer.scss */
+footer button.add-money {
+  bottom: 20px;
+  right: 50%;
+  background-color: green;
+}
+/* line 19, ../../sass/footer.scss */
+footer button.del-money {
+  bottom: 20px;
+  right: 30%;
+  background-color: red;
+}

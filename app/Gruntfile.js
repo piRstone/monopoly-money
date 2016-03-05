@@ -22,23 +22,37 @@ module.exports = function(grunt) {
 					'module.prefix',
 					'<%= config.proj_dir %>/app/*.js',
 					'<%= config.proj_dir %>/app/*/*.js',
+					'<%= config.proj_dir %>/common/*.js',
+					'<%= config.proj_dir %>/common/*/*.js',
 					'module.suffix'
 				],
-				dest: '<%= config.proj_dir %>/../build/monopoly.js'
+				dest: '<%= config.build_dir %>/monopoly.js'
 			}
+		},
+
+		clean: {
+			build: [
+				'<%= config.build_dir %>'
+			]
 		},
 
 		copy: {
 			templates: {
 				src: '**',
-				dest: '<%= config.proj_dir %>/../build/',
+				dest: '<%= config.build_dir %>',
 				cwd: 'src/app',
 				expand: true,
 				dot: true
 			},
+			assets: {
+				src: '**',
+				dest: '<%= config.build_dir %>/assets/',
+				cwd: '<%= config.proj_dir %>/assets',
+				expand: true
+			},
 			index:{
 				src: 'index.php',
-				dest: '<%= config.proj_dir %>/../build/',
+				dest: '<%= config.build_dir %>',
 				cwd: 'src/',
 				expand: true,
 				dot: true
@@ -53,6 +67,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('build-dev', ['compass', 'concat:js', 'copy']);
+	grunt.registerTask('build-dev', ['clean:build', 'compass', 'concat:js', 'copy']);
 	grunt.registerTask('default', ['build-dev']);
 };

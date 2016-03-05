@@ -1,6 +1,9 @@
 angular.module('monopoly', [
+	'monopoly.gameService',
+
 	'monopoly.header',
-	'monopoly.page',
+	'monopoly.home',
+	'monopoly.buy',
 
 	'ui.router'
 ])
@@ -25,12 +28,12 @@ angular.module('monopoly', [
 }])
 
 .config(['$urlRouterProvider', function($urlRouterProvider) {
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/home');
 }])
 
 
 .controller('AppCtrl',['$rootScope', '$scope', function($rootScope, $scope) {
-	$scope.text = 'Bonjour ui-view';
+	
 }])
 
 ;

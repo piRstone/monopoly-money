@@ -3,3 +3,36 @@ body {
   font-family: Helvetica;
   font-size: 14px;
 }
+
+/* Footer style */
+/* line 7, ../../sass/home.scss */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 12, ../../sass/home.scss */
+footer button {
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30px;
+  height: 60px;
+  width: 60px;
+  padding-bottom: 9px;
+}
+/* line 22, ../../sass/home.scss */
+footer button.add-money {
+  bottom: 20px;
+  right: 22%;
+  background-color: #8BC34A;
+}
+/* line 27, ../../sass/home.scss */
+footer button.del-money {
+  bottom: 20px;
+  right: 5%;
+  background-color: #F44336;
+}
