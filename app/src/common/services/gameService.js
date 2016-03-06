@@ -33,7 +33,7 @@ angular.module('monopoly.gameService', [])
 				UserService.user.credit -= card.price;
 			}
 			success(response.data);
-		}, function(error) {});
+		}, function(responseError) {});
 	}
 
 	var addMoney = function(amount, success, error) {
@@ -47,12 +47,11 @@ angular.module('monopoly.gameService', [])
 			}
 		}
 		$http.post('/data/postAddMoney.php', data, config).then(function(response) {
-			console.log(response);
 			if (response.data > 0) {
 				UserService.user.credit += parseInt(amount);
 			}
 			success(response.data);
-		}, function(error) {});
+		}, function(responseError) {});
 	}
 
 	var delMoney = function(amount, success, error) {
@@ -66,12 +65,11 @@ angular.module('monopoly.gameService', [])
 			}
 		}
 		$http.post('/data/postDelMoney.php', data, config).then(function(response) {
-			console.log(response);
 			if (response.data > 0) {
 				UserService.user.credit -= parseInt(amount);
 			}
 			success(response.data);
-		}, function(error) {});
+		}, function(responseError) {});
 	}
 
 	return {

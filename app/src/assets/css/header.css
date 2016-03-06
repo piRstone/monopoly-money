@@ -1,7 +1,7 @@
 /* Header style */
 /* line 2, ../../sass/header.scss */
 #header {
-  z-index: 10;
+  z-index: 1;
   height: 70px;
   width: 100%;
   background-color: #22d299;

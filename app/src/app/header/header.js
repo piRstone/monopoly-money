@@ -1,9 +1,15 @@
 angular.module('monopoly.header', [])
 
 .controller('HeaderCtrl', ['$scope', '$location', 'GameService', 'UserService', function($scope, $location, GameService, UserService) {
-	$scope.amount = UserService.user.credit;
+	$scope.amount = 0
 
 	$scope.location = $location.path();
+
+	$scope.$watch(function(){
+	    return UserService.user.credit;
+	}, function (newValue) {
+	    $scope.amount = newValue
+	});
 
 	/*var loadCredit = function(before, after) {
 		$({numberValue: 0}).animate({numberValue: after}, {
