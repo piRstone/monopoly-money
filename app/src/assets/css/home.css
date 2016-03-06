@@ -1,18 +1,29 @@
-/* line 1, ../../sass/home.scss */
+/* line 1, ../../sass/configuration.scss */
+body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+/* line 9, ../../sass/configuration.scss */
+.clear {
+  clear: both;
+}
+
+/* line 3, ../../sass/home.scss */
 body {
   font-family: Helvetica;
   font-size: 14px;
 }
 
 /* Footer style */
-/* line 7, ../../sass/home.scss */
+/* line 9, ../../sass/home.scss */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-/* line 12, ../../sass/home.scss */
+/* line 14, ../../sass/home.scss */
 footer button {
   position: absolute;
   border-radius: 50%;
@@ -24,23 +35,23 @@ footer button {
   width: 60px;
   padding-bottom: 9px;
 }
-/* line 22, ../../sass/home.scss */
+/* line 24, ../../sass/home.scss */
 footer button.add-money {
   bottom: 20px;
   right: 80px;
   background-color: #8BC34A;
 }
-/* line 26, ../../sass/home.scss */
+/* line 28, ../../sass/home.scss */
 footer button.add-money:active {
   background-color: #71a436;
 }
-/* line 30, ../../sass/home.scss */
+/* line 32, ../../sass/home.scss */
 footer button.del-money {
   bottom: 20px;
   right: 10px;
   background-color: #F44336;
 }
-/* line 34, ../../sass/home.scss */
+/* line 36, ../../sass/home.scss */
 footer button.del-money:active {
   background-color: #ea1c0d;
 }

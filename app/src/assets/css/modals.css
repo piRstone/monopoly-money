@@ -1,0 +1,139 @@
+/* line 1, ../../sass/configuration.scss */
+body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+/* line 9, ../../sass/configuration.scss */
+.clear {
+  clear: both;
+}
+
+/* line 3, ../../sass/modals.scss */
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* line 12, ../../sass/modals.scss */
+.modalCard {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CACACA;
+  width: 80%;
+}
+/* line 24, ../../sass/modals.scss */
+.modalCard .m-box {
+  border: 1px solid #000;
+  padding: 2px;
+}
+/* line 27, ../../sass/modals.scss */
+.modalCard .m-box .m-title {
+  background-color: #87ceea;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #000;
+  text-transform: uppercase;
+}
+/* line 33, ../../sass/modals.scss */
+.modalCard .m-box .m-title p:nth-child(1) {
+  font-size: 14px;
+}
+/* line 36, ../../sass/modals.scss */
+.modalCard .m-box .m-title p:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+/* line 42, ../../sass/modals.scss */
+.modalCard .m-box .prices {
+  padding: 10px 0;
+}
+/* line 44, ../../sass/modals.scss */
+.modalCard .m-box .prices table {
+  width: 100%;
+}
+/* line 46, ../../sass/modals.scss */
+.modalCard .m-box .prices table tr {
+  margin-bottom: 4px;
+}
+/* line 48, ../../sass/modals.scss */
+.modalCard .m-box .prices table tr td {
+  padding: 2px 0;
+}
+/* line 50, ../../sass/modals.scss */
+.modalCard .m-box .prices table tr td:nth-child(1) {
+  text-align: center;
+}
+/* line 57, ../../sass/modals.scss */
+.modalCard .m-box .info {
+  text-align: center;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 10px;
+  margin: 0 4px;
+}
+/* line 64, ../../sass/modals.scss */
+.modalCard .m-box .info p span {
+  font-weight: bold;
+}
+/* line 69, ../../sass/modals.scss */
+.modalCard .m-box .houses {
+  padding: 10px;
+}
+/* line 71, ../../sass/modals.scss */
+.modalCard .m-box .houses table {
+  width: 100%;
+}
+/* line 74, ../../sass/modals.scss */
+.modalCard .m-box .houses table tr td {
+  font-weight: bold;
+}
+/* line 76, ../../sass/modals.scss */
+.modalCard .m-box .houses table tr td span {
+  font-weight: normal;
+}
+/* line 83, ../../sass/modals.scss */
+.modalCard .m-box .hypo {
+  text-align: center;
+}
+/* line 86, ../../sass/modals.scss */
+.modalCard .m-box .action {
+  text-align: center;
+  padding: 10px;
+}
+/* line 89, ../../sass/modals.scss */
+.modalCard .m-box .action button {
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+}
+/* line 94, ../../sass/modals.scss */
+.modalCard .m-box .action button:nth-child(1) {
+  background-color: #8BC34A;
+}
+/* line 96, ../../sass/modals.scss */
+.modalCard .m-box .action button:nth-child(1):active {
+  background-color: #71a436;
+}
+/* line 100, ../../sass/modals.scss */
+.modalCard .m-box .action button:nth-child(2) {
+  background-color: #F44336;
+}
+/* line 102, ../../sass/modals.scss */
+.modalCard .m-box .action button:nth-child(2):active {
+  background-color: #ea1c0d;
+}

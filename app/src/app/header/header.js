@@ -1,10 +1,11 @@
 angular.module('monopoly.header', [])
 
-.controller('HeaderCtrl', ['$scope', '$location', 'GameService', function($scope, $location, GameService) {
-	$scope.amount = GameService.amount;
-	$scope.showBuy = false;
+.controller('HeaderCtrl', ['$scope', '$location', 'GameService', 'UserService', function($scope, $location, GameService, UserService) {
+	$scope.amount = UserService.user.credit;
 
-	var loadCredit = function(before, after) {
+	$scope.location = $location.path();
+
+	/*var loadCredit = function(before, after) {
 		$({numberValue: 0}).animate({numberValue: after}, {
 		    duration: 1500,
 		    easing: "swing",
@@ -17,7 +18,7 @@ angular.module('monopoly.header', [])
 
 	$scope.$watch('amount', function(v, old) {
 		loadCredit(old, v);
-	});
+	});*/
 }])
 
 ;

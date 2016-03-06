@@ -1,4 +1,4 @@
 <header id="header">
-	<a class="add-menu" ng-href="#/buy"><img src="assets/img/buy.png" alt="buy"></a>
-	<p class="credit-amount"><span id="credit"></span> <span>€</span></p>
+	<a class="add-menu" ng-href="#/buy" ng-show="location == '/home'"><img src="assets/img/buy.png" alt="buy"></a>
+	<p class="credit-amount"><span id="credit">{{ amount }}</span> <span>€</span></p>
 </header>

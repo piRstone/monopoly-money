@@ -12,7 +12,7 @@ angular.module('monopoly.buy', ['ui.router'])
 	});
 }])
 
-.controller('BuyCtrl', ['$scope', 'GameService', function($scope, GameService) {
+.controller('BuyCtrl', ['$rootScope', '$scope', 'GameService', function($rootScope, $scope, GameService) {
 	$scope.showCard = false;
 	$scope.properties = [];
 	$scope.card = {};
@@ -42,14 +42,12 @@ angular.module('monopoly.buy', ['ui.router'])
 			}
 		}, function() {});
 	}
+	getProperties();
 
 	$scope.showPropertyCard = function(index) {
-		$scope.card = $scope.properties[index];
-		$scope.showCard = true;
-		console.log($scope.card);
+		$rootScope.$emit('event:modalCard', [$scope.properties[index]]);
 	}
 
-	getProperties();
 }])
 
 ;

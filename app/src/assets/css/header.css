@@ -1,6 +1,7 @@
 /* Header style */
 /* line 2, ../../sass/header.scss */
 #header {
+  z-index: 10;
   height: 70px;
   width: 100%;
   background-color: #22d299;
@@ -8,16 +9,16 @@
   top: 0;
   left: 0;
 }
-/* line 9, ../../sass/header.scss */
+/* line 10, ../../sass/header.scss */
 #header .add-menu {
-  display: block;
+  display: inline-block;
   padding: 11px;
 }
-/* line 12, ../../sass/header.scss */
+/* line 13, ../../sass/header.scss */
 #header .add-menu img {
   height: 50px;
 }
-/* line 16, ../../sass/header.scss */
+/* line 17, ../../sass/header.scss */
 #header .credit-amount {
   position: absolute;
   top: 12px;

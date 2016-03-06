@@ -1,3 +1,5 @@
+@import "configuration.scss";
+
 body {
 	font-family: Helvetica;
 	font-size: 14px;
@@ -22,17 +24,17 @@ footer {
 		&.add-money {
 			bottom: 20px;
 			right: 80px;
-			background-color: #8BC34A;
+			background-color: $green;
 			&:active {
-				background-color: darken(#8BC34A, 10%);
+				background-color: darken($green, 10%);
 			}
 		}
 		&.del-money {
 			bottom: 20px;
 			right: 10px;
-			background-color: #F44336;
+			background-color: $red;
 			&:active {
-				background-color: darken(#F44336, 10%);
+				background-color: darken($red, 10%);
 			}
 		}
 	}

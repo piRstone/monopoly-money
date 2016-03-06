@@ -1,9 +1,11 @@
 angular.module('monopoly', [
 	'monopoly.gameService',
+	'monopoly.userService',
 
 	'monopoly.header',
 	'monopoly.home',
 	'monopoly.buy',
+	'monopoly.modalCard',
 
 	'ui.router'
 ])
@@ -22,7 +24,11 @@ angular.module('monopoly', [
 	    	header: {
 		    	controller: 'HeaderCtrl',
 		    	templateUrl: 'header/header.tpl.html'
-	    	}
+	    	},
+			modalCard: {
+				controller: 'ModalCardCtrl',
+				templateUrl: 'modals/modalCard.tpl.html'
+			}
 	    }
 	});
 }])
