@@ -1,0 +1,17 @@
+<div class="modalBackground" ng-show="showModalSetUser"></div>
+<div class="modalSetUser" ng-show="showModalSetUser">
+	<div class="u">
+		<form name="setUserForm"
+			ng-submit="setUser(userGame)">
+			<select ng-model="userGame.gameId" required>
+				<option disabled="disabled" ng-selected="true">Jeu</option>
+				<option ng-repeat="g in game" value="{{ g.id }}">{{ g.id }}</option>
+			</select>
+			<select ng-model="userGame.userId" required>
+				<option disabled="disabled" ng-selected="true">Joueur</option>
+				<option ng-repeat="user in users" value="{{ user.id }}">{{ user.name }}</option>
+			</select>
+			<button type="submit">Jouer</button>
+		</form>
+	</div>
+</div>

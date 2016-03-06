@@ -13,12 +13,16 @@ angular.module('monopoly.home', ['ui.router'])
 }])
 
 .controller('HomeCtrl', ['$scope', 'GameService', function($scope, GameService) {
-	$scope.properties = GameService.properties;
+	
 }])
 
-.controller('FooterCtrl', ['$scope', '$http', 'GameService', function($scope, $http, GameService) {
-	$scope.getPro = function() {
-		GameService.getProperties();
+.controller('FooterCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
+	$scope.addMoney = function() {
+		$scope.$emit('event:modalAddMoney', []);
+	}
+
+	$scope.delMoney = function() {
+		$scope.$emit('event:modalDelMoney', []);
 	}
 }])
 

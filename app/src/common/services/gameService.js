@@ -36,12 +36,52 @@ angular.module('monopoly.gameService', [])
 		}, function(error) {});
 	}
 
+	var addMoney = function(amount, success, error) {
+		var data = $.param({
+			user: UserService.user.id,
+			credit: amount
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postAddMoney.php', data, config).then(function(response) {
+			console.log(response);
+			if (response.data > 0) {
+				UserService.user.credit += parseInt(amount);
+			}
+			success(response.data);
+		}, function(error) {});
+	}
+
+	var delMoney = function(amount, success, error) {
+		var data = $.param({
+			user: UserService.user.id,
+			credit: amount
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postDelMoney.php', data, config).then(function(response) {
+			console.log(response);
+			if (response.data > 0) {
+				UserService.user.credit -= parseInt(amount);
+			}
+			success(response.data);
+		}, function(error) {});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
 		getProperties, getProperties,
 		getBuyableProperties: getBuyableProperties,
-		buyProperty: buyProperty
+		buyProperty: buyProperty,
+		addMoney: addMoney,
+		delMoney: delMoney
 	};
 }])
 

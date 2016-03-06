@@ -1,11 +1,15 @@
 angular.module('monopoly', [
 	'monopoly.gameService',
 	'monopoly.userService',
+	'monopoly.directives',
 
 	'monopoly.header',
 	'monopoly.home',
 	'monopoly.buy',
 	'monopoly.modalCard',
+	'monopoly.modalAddMoney',
+	'monopoly.modalDelMoney',
+	'monopoly.modalSetUser',
 
 	'ui.router'
 ])
@@ -28,6 +32,18 @@ angular.module('monopoly', [
 			modalCard: {
 				controller: 'ModalCardCtrl',
 				templateUrl: 'modals/modalCard.tpl.html'
+			},
+			modalAddMoney: {
+				controller: 'ModalAddMoneyCtrl',
+				templateUrl: 'modals/modalAddMoney.tpl.html'
+			},
+			modalDelMoney: {
+				controller: 'ModalDelMoneyCtrl',
+				templateUrl: 'modals/modalDelMoney.tpl.html'
+			},
+			modalSetUser: {
+				controller: 'ModalSetUserCtrl',
+				templateUrl: 'modals/modalSetUser.tpl.html'
 			}
 	    }
 	});
@@ -38,8 +54,12 @@ angular.module('monopoly', [
 }])
 
 
-.controller('AppCtrl',['$rootScope', '$scope', function($rootScope, $scope) {
-	
+.controller('AppCtrl',['$rootScope', '$scope', 'UserService', '$timeout', function($rootScope, $scope, UserService, $timeout) {
+	if (UserService.user.id == undefined) {
+		$timeout(function() {
+			$scope.$emit('event:modalSetUser', []);	
+		}, 1000);
+	}
 }])
 
 ;

@@ -137,3 +137,67 @@ body {
 .modalCard .m-box .action button:nth-child(2):active {
   background-color: #ea1c0d;
 }
+
+/* line 110, ../../sass/modals.scss */
+.modalAddMoney, .modalDelMoney {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+/* line 122, ../../sass/modals.scss */
+.modalAddMoney .m form input, .modalDelMoney .m form input {
+  height: 40px;
+  border: 1px solid #fff;
+  width: 70%;
+  font-size: 30px;
+  color: #757575;
+  vertical-align: middle;
+}
+/* line 130, ../../sass/modals.scss */
+.modalAddMoney .m form button, .modalDelMoney .m form button {
+  border-radius: 50%;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
+  padding-bottom: 9px;
+  vertical-align: middle;
+}
+/* line 140, ../../sass/modals.scss */
+.modalAddMoney .m form button.add-money, .modalDelMoney .m form button.add-money {
+  background-color: #8BC34A;
+}
+/* line 142, ../../sass/modals.scss */
+.modalAddMoney .m form button.add-money:active, .modalDelMoney .m form button.add-money:active {
+  background-color: #71a436;
+}
+/* line 146, ../../sass/modals.scss */
+.modalAddMoney .m form button.del-money, .modalDelMoney .m form button.del-money {
+  background-color: #F44336;
+}
+/* line 148, ../../sass/modals.scss */
+.modalAddMoney .m form button.del-money:active, .modalDelMoney .m form button.del-money:active {
+  background-color: #ea1c0d;
+}
+
+/* line 156, ../../sass/modals.scss */
+.modalSetUser {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+}

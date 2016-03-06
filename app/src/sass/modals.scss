@@ -107,3 +107,72 @@
 		}
 	}
 }
+.modalAddMoney, .modalDelMoney {
+	position: fixed;
+	top: 120px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95%;
+	background-color: rgba(0,0,0,.7);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 10px;
+	.m {
+		form {
+			input {
+				height: 40px;
+				border: 1px solid #fff;
+				width: 70%;
+				font-size: 30px;
+				color: #757575;
+				vertical-align: middle;
+			}
+			button {
+				border-radius: 50%;
+				border: none;
+				box-sizing: border-box;
+				color: #fff;
+				font-size: 30px;
+				height: 50px;
+				width: 50px;
+				padding-bottom: 9px;
+				vertical-align: middle;
+				&.add-money {
+					background-color: $green;
+					&:active {
+						background-color: darken($green, 10%);
+					}
+				}
+				&.del-money {
+					background-color: $red;
+					&:active {
+						background-color: darken($red, 10%);
+					}
+				}
+			}
+		}
+	}
+}
+.modalSetUser {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 6;
+	transform: translate(-50%, -50%);
+	width: 95%;
+	background-color: rgba(0,0,0,.7);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 10px;
+	.u {
+		form {
+
+		}
+	}
+}
+
+
+
+
+
+
