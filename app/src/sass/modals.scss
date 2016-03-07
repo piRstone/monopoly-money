@@ -24,60 +24,82 @@
 	.m-box {
 		border: 1px solid #000;
 		padding: 2px;
-		.m-title {
-			background-color: rgb(135, 206, 234);
-			padding: 10px;
-			text-align: center;
-			border: 1px solid #000;
-			text-transform: uppercase;
-			p:nth-child(1) {
-				font-size: 14px;
-			}
-			p:nth-child(2) {
-				font-size: 20px;
-				font-weight: bold;
-				margin-top: 5px;
-			}
-		}
-		.prices {
-			padding: 10px 0;
-			table {
-				width: 100%;
-				tr {
-					margin-bottom: 4px;
-					td {
-						padding: 2px 0;
-						&:nth-child(1) {
-							text-align: center;
-						}
-					}
+		.terrain {
+			.m-title {
+				padding: 10px;
+				text-align: center;
+				border: 1px solid #000;
+				text-transform: uppercase;
+				&.white {
+					color: #fff;
 				}
-			}
-		}
-		.info {
-			text-align: center;
-			border-top: 1px solid;
-			border-bottom: 1px solid;
-			padding: 10px;
-			margin: 0 4px;
-			p {
-				span {
+				p:nth-child(1) {
+					font-size: 14px;
+				}
+				p:nth-child(2) {
+					font-size: 20px;
 					font-weight: bold;
+					margin-top: 5px;
 				}
 			}
-		}
-		.houses {
-			padding: 10px;
-			table {
-				width: 100%;
-				tr {
-					td {
-						font-weight: bold;
-						span {
-							font-weight: normal;
+			.prices {
+				padding: 10px 0;
+				table {
+					width: 100%;
+					tr {
+						margin-bottom: 4px;
+						td {
+							padding: 2px 0;
+							&:nth-child(1) {
+								text-align: center;
+							}
 						}
 					}
 				}
+			}
+			.info {
+				text-align: center;
+				border-top: 1px solid;
+				border-bottom: 1px solid;
+				padding: 10px;
+				margin: 0 4px;
+				p {
+					span {
+						font-weight: bold;
+					}
+				}
+			}
+			.houses {
+				padding: 10px;
+				table {
+					width: 100%;
+					tr {
+						td {
+							font-weight: bold;
+							span {
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+		.gare {
+
+		}
+		.company {
+			text-align: center;
+			img {
+				width: 60%;
+			}
+			h4 {
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+			p {
+				margin-bottom: 10px;
 			}
 		}
 		.hypo {

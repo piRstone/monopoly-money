@@ -1,47 +1,57 @@
 <div class="modalBackground" ng-show="showCard" ng-click="showCard = false"></div>
 <div class="modalCard" ng-show="showCard">
 	<div class="m-box">
-		<div class="m-title" ng-style="{'background-color': card.color}">
-			<p>Titre de propriété</p>
-			<p>{{ card.name }}</p>
+		<div class="terrain" ng-show="card.type == 'terrain'">
+			<div class="m-title" ng-style="{'background-color': card.color}" ng-class="{'white': card.type == 'gare'}">
+				<p>Titre de propriété</p>
+				<p>{{ card.name }}</p>
+			</div>
+			<div class="prices">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td></td><td>€</td>
+						</tr>
+						<tr>
+							<td>LOYER</td><td>Terrain nu</td><td>{{ card.h0 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 1 Maison</td><td>{{ card.h1 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 2 Maisons</td><td>{{ card.h2 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 3 Maisons</td><td>{{ card.h3 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 4 Maisons</td><td>{{ card.h4 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec HÔTEL</td><td>{{ card.h5 }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="info">
+				<p>Si un joueur possède <span>TOUS</span> les terrains d'un Groupe de Couleur quelconque, le loyer des terrains nus de ce groupe est <span>doublé</span>.</p>
+			</div>
+			<div class="houses">
+				<table>
+					<tbody>
+						<tr><td>Prix des Maisons</td><td><span>€</span> {{ card.house }} chacune</td></tr>
+						<tr><td>Prix d'un Hôtel</td><td><span>€</span> {{ card.house }} plus<br>4 maisons</td></tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		<div class="prices">
-			<table>
-				<tbody>
-					<tr>
-						<td></td><td></td><td>€</td>
-					</tr>
-					<tr>
-						<td>LOYER</td><td>Terrain nu</td><td>{{ card.h0 }}</td>
-					</tr>
-					<tr>
-						<td>"</td><td>Avec 1 Maison</td><td>{{ card.h1 }}</td>
-					</tr>
-					<tr>
-						<td>"</td><td>Avec 2 Maisons</td><td>{{ card.h2 }}</td>
-					</tr>
-					<tr>
-						<td>"</td><td>Avec 3 Maisons</td><td>{{ card.h3 }}</td>
-					</tr>
-					<tr>
-						<td>"</td><td>Avec 4 Maisons</td><td>{{ card.h4 }}</td>
-					</tr>
-					<tr>
-						<td>"</td><td>Avec HÔTEL</td><td>{{ card.h5 }}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="info">
-			<p>Si un joueur possède <span>TOUS</span> les terrains d'un Groupe de Couleur quelconque, le loyer des terrains nus de ce groupe est <span>doublé</span>.</p>
-		</div>
-		<div class="houses">
-			<table>
-				<tbody>
-					<tr><td>Prix des Maisons</td><td><span>€</span> {{ card.house }} chacune</td></tr>
-					<tr><td>Prix d'un Hôtel</td><td><span>€</span> {{ card.house }} plus<br>4 maisons</td></tr>
-				</tbody>
-			</table>
+		<div class="gare" ng-show="card.type == 'gare'"></div>
+		<div class="company" ng-show="card.type == 'compagnie'">
+			<img src="assets/img/water-company.png" alt="water" ng-show="card.companyType == 'water'">
+			<img src="assets/img/electricity-company.png" alt="electricity" ng-show="card.companyType == 'electricity'">
+			<h4>{{ card.name }}</h4>
+			<p>Si l'on possède UNE carte de compagnie de Service Public, le loyer est 4 fois le montant indiqué par les dés.</p>
+			<p>Si l'on possède DEUX cartes de compagnie de Service Public, le loyer est 10 fois le montant indiqué par les dés.</p>
 		</div>
 		<div class="hypo">
 			<p>Valeur hypothécaire du terrain :</p>

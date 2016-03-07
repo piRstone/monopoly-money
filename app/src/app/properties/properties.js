@@ -66,6 +66,13 @@ angular.module('monopoly.properties', ['ui.router'])
 	var getUserProperties = function() {
 		UserService.getUserProperties(playerId, function(response) {
 			for (i=0 ; i < response.length ; i++) {
+				if (response[i].type == 'compagnie') {
+					if (response[i].name.search('eaux') != -1) {
+						response[i].companyType = 'water';
+					} else if (response[i].name.search('électricité') != -1) {
+						response[i].companyType = 'electricity';
+					}
+				}
 				$scope.properties.push(response[i]);
 			}
 		}, function(error) {
