@@ -1,0 +1,17 @@
+<div id="properties">
+	<div class="player-name">
+		<h4>{{ user.name }}</h4>
+	</div>
+	<ul>
+		<li ng-repeat="property in properties">
+			<div class="property" ng-click="showProperty($index)">
+				<div class="wrap">
+					<div class="head" ng-style="{'background-color': property.color}"></div>
+					<div class="body">
+						<p>{{ property.name }}</p>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -6,6 +6,7 @@ angular.module('monopoly', [
 	'monopoly.header',
 	'monopoly.home',
 	'monopoly.buy',
+	'monopoly.properties',
 	'monopoly.modalCard',
 	'monopoly.modalAddMoney',
 	'monopoly.modalDelMoney',

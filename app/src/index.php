@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/header.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/buy.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/properties.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/modals.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-additions.min.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/angular-motion.css"/>

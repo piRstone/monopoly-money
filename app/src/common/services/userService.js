@@ -24,7 +24,19 @@ angular.module('monopoly.userService', [])
 			user.credit = parseInt(response.data[0].credit);
 			success();
 		}, function(responseError) {
-			error();
+			error(responseError);
+		});
+	}
+
+	var getUserInfos = function(userId, success, error) {
+		$http({
+			method: 'GET',
+			url: '/data/getUserInfos.php',
+			params: {user: userId}
+		}).then(function(response) {
+			success(response.data);
+		}, function(responseError) {
+			error(responseError);
 		});
 	}
 
@@ -36,11 +48,25 @@ angular.module('monopoly.userService', [])
 		});
 	}
 
+	var getUserProperties = function(userId, success, error) {
+		$http({
+			method: 'GET',
+			url: '/data/getUserProperties.php',
+			params: {user: userId}
+		}).then(function(response) {
+			success(response.data);
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		user: user,
 		getGamesAndUsers: getGamesAndUsers,
 		setUserGame: setUserGame,
-		getPlayers: getPlayers
+		getUserInfos: getUserInfos,
+		getPlayers: getPlayers,
+		getUserProperties: getUserProperties
 	};
 }])
 

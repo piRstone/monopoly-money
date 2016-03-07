@@ -1,0 +1,55 @@
+@import "configuration.scss";
+
+/* Buy style */
+#properties {
+	margin-top: 70px;
+	width: 100%;
+	position: relative;
+	.player-name {
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		margin-bottom: 10px;
+		background-color: #fff;
+		box-shadow: 0px 0 7px rgba(0,0,0,.4);
+		h4 {
+			text-transform: uppercase;
+			font-size: 17px;
+			font-weight: bold;
+		}
+	}
+	ul {
+		li {
+			float: left;
+			width: 50%;
+			padding: 10px;
+			text-align: center;
+			box-sizing: border-box;
+			.property {
+				box-sizing: border-box;
+				border-radius: 5px;
+				width: 100%;
+				padding: 5px;
+				background-color: #fff;
+				box-shadow: 0 0 10px rgba(0,0,0,.25);
+				.wrap {
+					border: 1px solid #000;
+					height: 130px;
+					.head {
+						height: 40px;
+						width: 100%;
+						border-bottom: 1px solid #000;
+					}
+					.body {
+						text-align: center;
+						padding: 10px;
+						p {
+							text-transform: uppercase;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}

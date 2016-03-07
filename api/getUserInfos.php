@@ -11,7 +11,12 @@ if ($_GET['user']) {
 	$response = array();
 
 	while ($data = $res->fetch()) {
-		array_push($response, $data);
+		$user = array();
+		$user['id'] = $data['id'];
+		$user['name'] = $data['name'];
+		$user['game_id'] = $data['game_id'];
+		$user['credit'] = $data['credit'];
+		array_push($response, $user);
 	}
 
 	echo json_encode($response);

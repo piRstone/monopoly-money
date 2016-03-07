@@ -2,6 +2,7 @@ angular.module('monopoly.header', [])
 
 .controller('HeaderCtrl', ['$scope', '$location', 'GameService', 'UserService', function($scope, $location, GameService, UserService) {
 	$scope.amount = 0
+	$scope.back = false;
 
 	$scope.location = $location.path();
 
@@ -9,6 +10,16 @@ angular.module('monopoly.header', [])
 	    return UserService.user.credit;
 	}, function (newValue) {
 	    $scope.amount = newValue
+	});
+
+	$scope.$watch(function(){
+	    return $location.path();
+	}, function (newValue) {
+	    if (newValue != '/home') {
+	    	$scope.back = true;
+	    } else {
+	    	$scope.back = false;
+	    }
 	});
 
 	/*var loadCredit = function(before, after) {
