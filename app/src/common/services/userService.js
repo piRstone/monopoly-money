@@ -28,10 +28,19 @@ angular.module('monopoly.userService', [])
 		});
 	}
 
+	var getPlayers = function(success, error) {
+		$http.get('/data/getPlayers.php').then(function(response) {
+			success(response.data);
+		}, function(responseError) {
+			console.log('getPlayer error');
+		});
+	}
+
 	return {
 		user: user,
 		getGamesAndUsers: getGamesAndUsers,
-		setUserGame: setUserGame
+		setUserGame: setUserGame,
+		getPlayers: getPlayers
 	};
 }])
 

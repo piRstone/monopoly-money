@@ -12,8 +12,18 @@ angular.module('monopoly.home', ['ui.router'])
 	});
 }])
 
-.controller('HomeCtrl', ['$scope', 'GameService', function($scope, GameService) {
-	
+.controller('HomeCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
+	$scope.user = UserService.user;
+	$scope.players = [];
+	UserService.getPlayers(function(response) {
+		for (i=0 ; i < response.length ; i++) {
+			var player = {};
+			player.id = response[i].id;
+			player.name = response[i].name;
+			player.nbProperties = response[i].nbProperties;
+			$scope.players.push(player);
+		}
+	}, function() {});
 }])
 
 .controller('FooterCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {

@@ -1,8 +1,30 @@
 @import "configuration.scss";
 
 #home {
-	margin-top: 70px;
+	padding-top: 70px;
 	height: 100%;
+	.user-container {
+		ul {
+			li {
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+				padding: 20px;
+				a {
+					display: block;
+					box-sizing: border-box;
+					background-color: whitesmoke;
+					border-radius: 50%;
+					width: 100px;
+					height: 100px;
+					box-shadow: 0 0 10px rgba(0,0,0,.25);
+					&:active {
+						background-color: darken(whitesmoke, 10%);
+					}
+				}
+			}
+		}
+	}
 }
 
 /* Footer style */
