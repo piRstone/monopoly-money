@@ -108,59 +108,84 @@ body {
 .modalCard .m-box .terrain .houses table tr td span {
   font-weight: normal;
 }
-/* line 90, ../../sass/modals.scss */
-.modalCard .m-box .company {
+/* line 87, ../../sass/modals.scss */
+.modalCard .m-box .gare, .modalCard .m-box .company {
   text-align: center;
 }
-/* line 92, ../../sass/modals.scss */
-.modalCard .m-box .company img {
+/* line 89, ../../sass/modals.scss */
+.modalCard .m-box .gare img, .modalCard .m-box .company img {
   width: 60%;
 }
-/* line 95, ../../sass/modals.scss */
-.modalCard .m-box .company h4 {
+/* line 92, ../../sass/modals.scss */
+.modalCard .m-box .gare h4, .modalCard .m-box .company h4 {
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-/* line 101, ../../sass/modals.scss */
-.modalCard .m-box .company p {
+/* line 98, ../../sass/modals.scss */
+.modalCard .m-box .gare p, .modalCard .m-box .company p {
   margin-bottom: 10px;
 }
-/* line 105, ../../sass/modals.scss */
+/* line 101, ../../sass/modals.scss */
+.modalCard .m-box .gare .table, .modalCard .m-box .company .table {
+  text-align: center;
+  padding: 10px 5px;
+}
+/* line 104, ../../sass/modals.scss */
+.modalCard .m-box .gare .table table, .modalCard .m-box .company .table table {
+  width: 100%;
+}
+/* line 107, ../../sass/modals.scss */
+.modalCard .m-box .gare .table table tr td, .modalCard .m-box .company .table table tr td {
+  padding: 2px 0;
+}
+/* line 109, ../../sass/modals.scss */
+.modalCard .m-box .gare .table table tr td:nth-child(1), .modalCard .m-box .company .table table tr td:nth-child(1) {
+  text-align: left;
+}
+/* line 112, ../../sass/modals.scss */
+.modalCard .m-box .gare .table table tr td:nth-child(2), .modalCard .m-box .company .table table tr td:nth-child(2) {
+  font-weight: bold;
+}
+/* line 120, ../../sass/modals.scss */
 .modalCard .m-box .hypo {
   text-align: center;
 }
-/* line 108, ../../sass/modals.scss */
+/* line 123, ../../sass/modals.scss */
+.modalCard .m-box .hypo p span {
+  font-weight: bold;
+}
+/* line 128, ../../sass/modals.scss */
 .modalCard .m-box .action {
   text-align: center;
   padding: 10px;
 }
-/* line 111, ../../sass/modals.scss */
+/* line 131, ../../sass/modals.scss */
 .modalCard .m-box .action button {
   border: none;
   color: #fff;
   padding: 15px;
   font-size: 18px;
 }
-/* line 116, ../../sass/modals.scss */
+/* line 136, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(1) {
   background-color: #8BC34A;
 }
-/* line 118, ../../sass/modals.scss */
+/* line 138, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(1):active {
   background-color: #71a436;
 }
-/* line 122, ../../sass/modals.scss */
+/* line 142, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(2) {
   background-color: #F44336;
 }
-/* line 124, ../../sass/modals.scss */
+/* line 144, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(2):active {
   background-color: #ea1c0d;
 }
 
-/* line 132, ../../sass/modals.scss */
+/* line 152, ../../sass/modals.scss */
 .modalAddMoney, .modalDelMoney {
   position: fixed;
   top: 120px;
@@ -172,7 +197,7 @@ body {
   box-sizing: border-box;
   padding: 10px;
 }
-/* line 144, ../../sass/modals.scss */
+/* line 164, ../../sass/modals.scss */
 .modalAddMoney .m form input, .modalDelMoney .m form input {
   height: 40px;
   border: 1px solid #fff;
@@ -181,7 +206,7 @@ body {
   color: #757575;
   vertical-align: middle;
 }
-/* line 152, ../../sass/modals.scss */
+/* line 172, ../../sass/modals.scss */
 .modalAddMoney .m form button, .modalDelMoney .m form button {
   border-radius: 50%;
   border: none;
@@ -193,24 +218,24 @@ body {
   padding-bottom: 9px;
   vertical-align: middle;
 }
-/* line 162, ../../sass/modals.scss */
+/* line 182, ../../sass/modals.scss */
 .modalAddMoney .m form button.add-money, .modalDelMoney .m form button.add-money {
   background-color: #8BC34A;
 }
-/* line 164, ../../sass/modals.scss */
+/* line 184, ../../sass/modals.scss */
 .modalAddMoney .m form button.add-money:active, .modalDelMoney .m form button.add-money:active {
   background-color: #71a436;
 }
-/* line 168, ../../sass/modals.scss */
+/* line 188, ../../sass/modals.scss */
 .modalAddMoney .m form button.del-money, .modalDelMoney .m form button.del-money {
   background-color: #F44336;
 }
-/* line 170, ../../sass/modals.scss */
+/* line 190, ../../sass/modals.scss */
 .modalAddMoney .m form button.del-money:active, .modalDelMoney .m form button.del-money:active {
   background-color: #ea1c0d;
 }
 
-/* line 178, ../../sass/modals.scss */
+/* line 198, ../../sass/modals.scss */
 .modalSetUser {
   position: fixed;
   top: 50%;

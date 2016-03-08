@@ -45,7 +45,31 @@
 				</table>
 			</div>
 		</div>
-		<div class="gare" ng-show="card.type == 'gare'"></div>
+		<div class="gare" ng-show="card.type == 'gare'">
+			<img src="assets/img/train.png" alt="train">
+			<h4>{{ card.name }}</h4>
+			<div class="table">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td>€</td>
+						</tr>
+						<tr>
+							<td>LOYER</td><td>25</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 2 Gares</td><td>50</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 3 Gares</td><td>100</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 4 Gares</td><td>200</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 		<div class="company" ng-show="card.type == 'compagnie'">
 			<img src="assets/img/water-company.png" alt="water" ng-show="card.companyType == 'water'">
 			<img src="assets/img/electricity-company.png" alt="electricity" ng-show="card.companyType == 'electricity'">
@@ -55,7 +79,7 @@
 		</div>
 		<div class="hypo">
 			<p>Valeur hypothécaire du terrain :</p>
-			<p>€ {{ card.hypotheque }}</p>
+			<p>€ <span>{{ card.hypotheque }}</span></p>
 		</div>
 		<div class="action">
 			<button ng-click="buyProperty()">Acheter</button>

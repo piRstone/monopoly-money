@@ -84,10 +84,7 @@
 				}
 			}
 		}
-		.gare {
-
-		}
-		.company {
+		.gare, .company {
 			text-align: center;
 			img {
 				width: 60%;
@@ -101,9 +98,32 @@
 			p {
 				margin-bottom: 10px;
 			}
+			.table {
+				text-align: center;
+				padding: 10px 5px;
+				table {
+					width: 100%;
+					tr {
+						td {
+							padding: 2px 0;
+							&:nth-child(1) {
+								text-align: left;
+							}
+							&:nth-child(2) {
+								font-weight: bold;
+							}
+						}
+					}
+				}
+			}
 		}
 		.hypo {
 			text-align: center;
+			p {
+				span {
+					font-weight: bold;
+				}
+			}
 		}
 		.action {
 			text-align: center;

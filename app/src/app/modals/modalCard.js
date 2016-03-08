@@ -6,7 +6,7 @@ angular.module('monopoly.modalCard', [])
 	var eventModalCard = $rootScope.$on('event:modalCard', function(event, data) {
 		$scope.card = data[0];
 		$scope.showCard = true;
-		console.log($scope.card.companyType);
+		console.log($scope.card.type);
 	});
 
 	$scope.buyProperty = function() {
