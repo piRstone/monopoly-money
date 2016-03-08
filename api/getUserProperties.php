@@ -30,6 +30,7 @@ if ($_GET['user']) {
 		$prop['price'] = $data['price'];
 		$prop['hypotheque'] = $data['hypotheque'];
 		$prop['color'] = $data['color'];
+		$prop['nbHouses'] = $data['nbHouses'];
 		array_push($response, $prop);
 	}
 

@@ -16,6 +16,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-additions.min.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/angular-motion.css"/>
 
+		<link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,700,600italic,700italic,900" rel="stylesheet" type="text/css">
+
 	</head>
 	<body ng-app="monopoly">
 		<div id="monopoly-root" ui-view></div>
