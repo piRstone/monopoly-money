@@ -30,14 +30,20 @@ angular.module('monopoly.modalUserCard', [])
 
 	$scope.confirmBuyHouse = function() {
 		GameService.buyHouse($scope.card, function(response) {
-
+			$scope.confirmBuy = false;
+			$scope.card.nbHouses++;
 		}, function(error) {
 			console.error(error.status);
 		});
 	}
 
 	$scope.confirmSellHouse = function() {
-
+		GameService.sellHouse($scope.card, $scope.nbSell, function(response) {
+			$scope.confirmSell = false;
+			$scope.card.nbHouses -= $scope.nbSell;
+		}, function(error) {
+			console.error(error.status);
+		});
 	}
 
 	$scope.$on('$destroy', eventModalUserCard);

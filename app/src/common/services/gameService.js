@@ -82,9 +82,29 @@ angular.module('monopoly.gameService', [])
 				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
 			}
 		}
-		$http.post('/data/buyHouse', data, config).then(function(response) {
+		$http.post('/data/postBuyHouse.php', data, config).then(function(response) {
 			if (response.data > 0) {
 				UserService.user.credit -= parseInt(card.house);
+			}
+			success(response.data);
+		}, function(responseError) {});
+	}
+
+	var sellHouse = function(card, nb, success, error) {
+		var data = $.param({
+			user: UserService.user.id,
+			property: card.id,
+			nbSell: nb
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postSellHouse.php', data, config).then(function(response) {
+			if (response.data > 0) {
+				var amount = (card.house / 2) * nb;
+				UserService.user.credit += amount;
 			}
 			success(response.data);
 		}, function(responseError) {});
@@ -98,7 +118,8 @@ angular.module('monopoly.gameService', [])
 		buyProperty: buyProperty,
 		addMoney: addMoney,
 		delMoney: delMoney,
-		buyHouse: buyHouse
+		buyHouse: buyHouse,
+		sellHouse: sellHouse
 	};
 }])
 
