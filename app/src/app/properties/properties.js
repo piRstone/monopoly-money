@@ -25,7 +25,6 @@ angular.module('monopoly.properties', ['ui.router'])
 }])
 
 .controller('UserPropertiesCtrl', ['$rootScope', '$scope', 'GameService', 'UserService', function($rootScope, $scope, GameService, UserService) {
-	$('body').css('background-color', 'whitesmoke');
 
 	$scope.user = UserService.user;
 	$scope.properties = [];
@@ -42,13 +41,12 @@ angular.module('monopoly.properties', ['ui.router'])
 	getUserProperties();
 
 	$scope.showProperty = function(index) {
-		$scope.$emit('event:modalCard', [$scope.properties[index]]);
+		$scope.$emit('event:modalUserCard', [$scope.properties[index]]);
 	}
 
 }])
 
 .controller('PlayerPropertiesCtrl', ['$rootScope', '$scope', 'GameService', 'UserService', '$stateParams', function($rootScope, $scope, GameService, UserService, $stateParams) {
-	$('body').css('background-color', 'whitesmoke');
 
 	$scope.user = UserService.user;
 	$scope.player = {};

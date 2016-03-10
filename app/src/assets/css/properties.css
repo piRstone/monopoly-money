@@ -2,9 +2,10 @@
 body {
   font-family: Helvetica;
   font-size: 14px;
+  background-color: whitesmoke;
 }
 
-/* line 9, ../../sass/configuration.scss */
+/* line 10, ../../sass/configuration.scss */
 .clear {
   clear: both;
 }
@@ -68,4 +69,30 @@ body {
 #properties ul li .property .wrap .body p {
   text-transform: uppercase;
   font-weight: bold;
+}
+/* line 51, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses {
+  width: 100%;
+}
+/* line 54, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses ul li {
+  float: left;
+  width: 25%;
+  height: 30px;
+  box-sizing: border-box;
+  background-image: url("../img/house.png");
+  background-size: 30px 23px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .3;
+}
+/* line 64, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses ul li.green {
+  background-image: url("../img/house_green.png");
+  opacity: 1;
+}
+/* line 68, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses ul li:last-child {
+  background: none;
+  display: none;
 }

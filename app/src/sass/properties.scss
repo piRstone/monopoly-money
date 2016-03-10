@@ -48,6 +48,30 @@
 							font-weight: bold;
 						}
 					}
+					.houses {
+						width: 100%;
+						ul {
+							li {
+								float: left;
+								width: 25%;
+								height: 30px;
+								box-sizing: border-box;
+								background-image: url('../img/house.png');
+								background-size: 30px 23px;
+								background-repeat: no-repeat;
+								background-position: center;
+								opacity: .3;
+								&.green {
+									background-image: url('../img/house_green.png');
+									opacity: 1;
+								}
+								&:last-child {
+									background: none;
+									display: none;
+								}
+							}
+						}
+					}
 				}
 			}
 		}

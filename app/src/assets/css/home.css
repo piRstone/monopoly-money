@@ -2,9 +2,10 @@
 body {
   font-family: Helvetica;
   font-size: 14px;
+  background-color: whitesmoke;
 }
 
-/* line 9, ../../sass/configuration.scss */
+/* line 10, ../../sass/configuration.scss */
 .clear {
   clear: both;
 }
@@ -25,7 +26,7 @@ body {
 #home .user-container ul li a {
   display: block;
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-color: #fff;
   border-radius: 50%;
   width: 130px;
   height: 130px;

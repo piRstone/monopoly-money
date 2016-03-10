@@ -83,6 +83,64 @@
 					}
 				}
 			}
+			.confirm-buy-or-sell {
+				text-align: center;
+				padding: 50px 0;
+				p {
+					font-size: 16px;
+				}
+				div {
+					padding: 20px 0;
+					button {
+						border: none;
+						color: #fff;
+						padding: 15px;
+						font-size: 18px;
+						&:nth-child(1) {
+							background-color: $green;
+							&:active {
+								background-color: darken($green, 10%);
+							}
+						}
+						&:nth-child(2) {
+							background-color: $red;
+							&:active {
+								background-color: darken($red, 10%);
+							}
+						}
+					}
+				}
+			}
+			.add-houses {
+				width: 100%;
+				ul {
+					li {
+						float: left;
+						width: 25%;
+						height: 40px;
+						cursor: pointer;
+						box-sizing: border-box;
+						background-image: url('../img/house.png');
+						background-size: 40px 33px;
+						background-repeat: no-repeat;
+						background-position: center;
+						opacity: .3;
+						&.green {
+							background-image: url('../img/house_green.png');
+							opacity: 1;
+						}
+						&:last-child {
+							background: none;
+							display: none;
+						}
+					}
+				}
+				p {
+					color: red;
+					margin: 5px 0;
+					text-align: center;
+				}
+			}
 		}
 		.gare, .company {
 			text-align: center;

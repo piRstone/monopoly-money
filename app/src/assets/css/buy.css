@@ -2,9 +2,10 @@
 body {
   font-family: Helvetica;
   font-size: 14px;
+  background-color: whitesmoke;
 }
 
-/* line 9, ../../sass/configuration.scss */
+/* line 10, ../../sass/configuration.scss */
 .clear {
   clear: both;
 }

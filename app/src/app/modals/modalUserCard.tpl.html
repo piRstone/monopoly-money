@@ -1,0 +1,109 @@
+<div class="modalBackground" ng-show="showUserCard" ng-click="showUserCard = false"></div>
+<div class="modalCard" ng-show="showUserCard">
+	<div class="m-box">
+		<div class="terrain" ng-show="card.type == 'terrain'">
+			<div class="m-title" ng-style="{'background-color': card.color}" ng-class="{'white': card.type == 'gare'}">
+				<p>Titre de propriété</p>
+				<p>{{ card.name }}</p>
+			</div>
+			<div class="prices" ng-show="!confirmBuy && !confirmSell">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td></td><td>€</td>
+						</tr>
+						<tr>
+							<td>LOYER</td><td>Terrain nu</td><td>{{ card.h0 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 1 Maison</td><td>{{ card.h1 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 2 Maisons</td><td>{{ card.h2 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 3 Maisons</td><td>{{ card.h3 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec 4 Maisons</td><td>{{ card.h4 }}</td>
+						</tr>
+						<tr>
+							<td>"</td><td>Avec HÔTEL</td><td>{{ card.h5 }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="houses" ng-show="!confirmBuy && !confirmSell">
+				<table>
+					<tbody>
+						<tr><td>Prix des Maisons</td><td><span>€</span> {{ card.house }} chacune</td></tr>
+						<tr><td>Prix d'un Hôtel</td><td><span>€</span> {{ card.house }} plus<br>4 maisons</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="confirm-buy-or-sell" ng-show="confirmBuy">
+				<p>Acheter une maison pour {{ card.house }} € ?</p>
+				<div>
+					<button type="button" ng-click="confirmBuyHouse()">Acheter</button>
+					<button type="button" ng-click="confirmBuy = false">Annuler</button>
+				</div>
+			</div>
+			<div class="confirm-buy-or-sell" ng-show="confirmSell">
+				<p>Vendre {{ nbSell }} <span ng-show="nbSell == 1">maison</span><span ng-show="nbSell > 1">maisons</span> pour {{ priceOfHouses }} € ?</p>
+				<div>
+					<button type="button" ng-click="confirmSellHouse()">Vendre</button>
+					<button type="button" ng-click="confirmSell = false">Annuler</button>
+				</div>
+			</div>
+			<div class="add-houses">
+				<ul>
+					<li ng-class="{'green': card.nbHouses > 0}" ng-click="buyHouse(1)"></li>
+					<li ng-class="{'green': card.nbHouses > 1}" ng-click="buyHouse(2)"></li>
+					<li ng-class="{'green': card.nbHouses > 2}" ng-click="buyHouse(3)"></li>
+					<li ng-class="{'green': card.nbHouses > 3}" ng-click="buyHouse(4)"></li>
+					<li class="clear"></li>
+				</ul>
+				<p ng-show="toMuchError">Une maison à la fois</p>
+			</div>
+		</div>
+		<div class="gare" ng-show="card.type == 'gare'">
+			<img src="assets/img/train.png" alt="train">
+			<h4>{{ card.name }}</h4>
+			<div class="table">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td>€</td>
+						</tr>
+						<tr>
+							<td>LOYER</td><td>25</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 2 Gares</td><td>50</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 3 Gares</td><td>100</td>
+						</tr>
+						<tr>
+							<td>Si vous avez 4 Gares</td><td>200</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="company" ng-show="card.type == 'compagnie'">
+			<img src="assets/img/water-company.png" alt="water" ng-show="card.companyType == 'water'">
+			<img src="assets/img/electricity-company.png" alt="electricity" ng-show="card.companyType == 'electricity'">
+			<h4>{{ card.name }}</h4>
+			<p>Si l'on possède UNE carte de compagnie de Service Public, le loyer est 4 fois le montant indiqué par les dés.</p>
+			<p>Si l'on possède DEUX cartes de compagnie de Service Public, le loyer est 10 fois le montant indiqué par les dés.</p>
+		</div>
+		<div class="hypo">
+			<p>Valeur hypothécaire du terrain :</p>
+			<p>€ <span>{{ card.hypotheque }}</span></p>
+		</div>
+		<div class="action">
+			<button ng-click="showUserCard = false">Fermer</button>
+		</div>
+	</div>
+</div>

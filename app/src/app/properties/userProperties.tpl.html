@@ -10,6 +10,15 @@
 					<div class="body">
 						<p>{{ property.name }}</p>
 					</div>
+					<div class="houses" ng-show="property.type == 'terrain'">
+						<ul>
+							<li ng-class="{'green': property.nbHouses > 0}"></li>
+							<li ng-class="{'green': property.nbHouses > 1}"></li>
+							<li ng-class="{'green': property.nbHouses > 2}"></li>
+							<li ng-class="{'green': property.nbHouses > 3}"></li>
+							<li class="clear"></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</li>
