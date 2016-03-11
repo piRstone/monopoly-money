@@ -258,7 +258,7 @@ body {
 /* line 210, ../../sass/modals.scss */
 .modalAddMoney, .modalDelMoney {
   position: fixed;
-  top: 120px;
+  bottom: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 95%;

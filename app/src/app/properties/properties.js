@@ -56,7 +56,7 @@ angular.module('monopoly.properties', ['ui.router'])
 
 	var getPlayer = function() {
 		UserService.getUserInfos(playerId, function(response) {
-			$scope.player = response[0];
+			$scope.player = response;
 		}, function() {});
 	}
 	getPlayer();
