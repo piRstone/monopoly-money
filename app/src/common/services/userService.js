@@ -18,7 +18,10 @@ angular.module('monopoly.userService', [])
 			url: '/data/getUserInfos.php',
 			params: {user: userId}
 		}).then(function(response) {
-			user = response.data;
+			user.id = response.data.id;
+			user.name = response.data.name;
+			user.game_id = response.data.game_id;
+			user.credit = parseInt(response.data.credit);
 			var d = new Date();
 			d.setHours(d.getHours() + 1);
 			document.cookie = "user_id=" + userId + "; expires=" + d;
