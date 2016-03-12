@@ -11,16 +11,28 @@ if ($_POST['user'] && $_POST['property']) {
 	$req = $bdd->query("SELECT * FROM properties WHERE id = $propertyId");
 	$resp = $req->fetch();
 	$price = $resp['price'];
-	if ($resp['owner_id'] == null) {
+	$type = $resp['type'];
+	$owner_id = $resp['owner_id'];
 
-		// Get user credit
-		$req = $bdd->query("SELECT credit FROM users WHERE id = $userId");
-		$resp = $req->fetch();
-		$currentCredit = $resp['credit'];
-		$newCredit = $currentCredit - $price;
+	// Get user credit
+	$req2 = $bdd->query("SELECT credit FROM users WHERE id = $userId");
+	$resp2 = $req2->fetch();
+	$currentCredit = $resp2['credit'];
+	$newCredit = $currentCredit - $price;
+	if ($newCredit < 0) {
+		return http_response_code(401);
+	}
 
+	if ($owner_id == null) {
 		$res = $bdd->exec("UPDATE properties SET owner_id = $userId WHERE id = $propertyId");
-		$res = $bdd->exec("UPDATE users SET credit = $newCredit WHERE id = $userId");
+		$res = $bdd->exec("UPDATE users SET credit = credit - $price WHERE id = $userId");
+
+		if ($type == 'gare') {
+			$bdd->exec("UPDATE users SET nbGares = nbGares + 1 WHERE id = $userId");
+		}
+		if ($type == 'compagnie') {
+			$bdd->exec("UPDATE users SET nbCompagnies = nbCompagnies + 1 WHERE id = $userId");	
+		}
 
 		echo json_encode($res);
 	} else {
@@ -28,6 +40,7 @@ if ($_POST['user'] && $_POST['property']) {
 	}
 
 	$req->closeCursor();
+	$req2->closeCursor();
 }
 
 ?>

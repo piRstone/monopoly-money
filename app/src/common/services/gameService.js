@@ -69,7 +69,9 @@ angular.module('monopoly.gameService', [])
 				UserService.user.credit -= parseInt(amount);
 			}
 			success(response.data);
-		}, function(responseError) {});
+		}, function(responseError) {
+			error();
+		});
 	}
 
 	var buyHouse = function(card, success, error) {
@@ -87,7 +89,9 @@ angular.module('monopoly.gameService', [])
 				UserService.user.credit -= parseInt(card.house);
 			}
 			success(response.data);
-		}, function(responseError) {});
+		}, function(responseError) {
+			error();
+		});
 	}
 
 	var sellHouse = function(card, nb, success, error) {
@@ -107,7 +111,30 @@ angular.module('monopoly.gameService', [])
 				UserService.user.credit += amount;
 			}
 			success(response.data);
-		}, function(responseError) {});
+		}, function(responseError) {
+			error();
+		});
+	}
+
+	var payRental = function(_rental, _player, success, error) {
+		var data = $.param({
+			rental: _rental,
+			player: _player.id,
+			user: UserService.user.id
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postpayRental.php', data, config).then(function(response) {
+			if (response.data > 0) {
+				UserService.user.credit -= _rental;
+			}
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
 	}
 
 	return {
@@ -119,7 +146,8 @@ angular.module('monopoly.gameService', [])
 		addMoney: addMoney,
 		delMoney: delMoney,
 		buyHouse: buyHouse,
-		sellHouse: sellHouse
+		sellHouse: sellHouse,
+		payRental: payRental
 	};
 }])
 

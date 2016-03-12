@@ -1,7 +1,7 @@
 <div class="modalAddMoney" ng-show="showModalAddMoney">
 	<div class="m">
 		<form name="addForm" ng-submit="addMoney(amount)">
-			<input type="text" pattern="[0-9]*" id="add-money" ng-model="amount">
+			<input type="tel" id="add-money" ng-model="amount">
 			<button type="submit" class="add-money">+</button>
 		</form>
 	</div>

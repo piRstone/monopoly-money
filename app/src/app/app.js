@@ -12,6 +12,7 @@ angular.module('monopoly', [
 	'monopoly.modalDelMoney',
 	'monopoly.modalSetUser',
 	'monopoly.modalUserCard',
+	'monopoly.modalPayRental',
 
 	'ui.router'
 ])
@@ -50,6 +51,10 @@ angular.module('monopoly', [
 			modalUserCard: {
 				controller: 'ModalUserCardCtrl',
 				templateUrl: 'modals/modalUserCard.tpl.html'
+			},
+			modalPayRental: {
+				controller: 'ModalPayRentalCtrl',
+				templateUrl: 'modals/modalPayRental.tpl.html'
 			}
 	    }
 	});

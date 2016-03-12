@@ -32,6 +32,13 @@ angular.module('monopoly.properties', ['ui.router'])
 	var getUserProperties = function() {
 		UserService.getUserProperties(UserService.user.id, function(response) {
 			for (i=0 ; i < response.length ; i++) {
+				if (response[i].type == 'compagnie') {
+					if (response[i].name.search('eaux') != -1) {
+						response[i].companyType = 'water';
+					} else if (response[i].name.search('électricité') != -1) {
+						response[i].companyType = 'electricity';
+					}
+				}
 				$scope.properties.push(response[i]);
 			}
 		}, function(error) {
@@ -80,7 +87,7 @@ angular.module('monopoly.properties', ['ui.router'])
 	getUserProperties();
 
 	$scope.showProperty = function(index) {
-		$scope.$emit('event:modalCard', [$scope.properties[index]]);
+		$scope.$emit('event:modalPayRental', [$scope.properties[index], $scope.player]);
 	}
 
 }])

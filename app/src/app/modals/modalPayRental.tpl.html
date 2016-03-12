@@ -1,0 +1,86 @@
+<div class="modalBackground" ng-show="showModalPayRental" ng-click="showModalPayRental = false"></div>
+<div class="modalCard" ng-show="showModalPayRental">
+	<div class="m-box">
+		<div class="terrain" ng-show="card.type == 'terrain'">
+			<div class="m-title" ng-style="{'background-color': card.color}" ng-class="{'white': card.type == 'gare'}">
+				<p>Titre de propriété</p>
+				<p>{{ card.name }}</p>
+			</div>
+			<div class="prices">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td></td><td>€</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 0}">
+							<td>LOYER</td><td>Terrain nu</td><td>{{ card.h0 }}</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 1}">
+							<td>"</td><td>Avec 1 Maison</td><td>{{ card.h1 }}</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 2}">
+							<td>"</td><td>Avec 2 Maisons</td><td>{{ card.h2 }}</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 3}">
+							<td>"</td><td>Avec 3 Maisons</td><td>{{ card.h3 }}</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 4}">
+							<td>"</td><td>Avec 4 Maisons</td><td>{{ card.h4 }}</td>
+						</tr>
+						<tr ng-class="{'bold': card.nbHouses == 5}">
+							<td>"</td><td>Avec HÔTEL</td><td>{{ card.h5 }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="gare" ng-show="card.type == 'gare'">
+			<img src="assets/img/train.png" alt="train">
+			<h4>{{ card.name }}</h4>
+			<div class="table">
+				<table>
+					<tbody>
+						<tr>
+							<td></td><td>€</td>
+						</tr>
+						<tr ng-class="{'bold': player.nbGares == 1}">
+							<td>Si {{ player.name }} a 1 gare</td><td>25</td>
+						</tr>
+						<tr ng-class="{'bold': player.nbGares == 2}">
+							<td>Si {{ player.name }} a 2 Gares</td><td>50</td>
+						</tr>
+						<tr ng-class="{'bold': player.nbGares == 3}">
+							<td>Si {{ player.name }} a 3 Gares</td><td>100</td>
+						</tr>
+						<tr ng-class="{'bold': player.nbGares == 3}">
+							<td>Si {{ player.name }} a 4 Gares</td><td>200</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>		
+		<div class="company" ng-show="card.type == 'compagnie'">
+			<img src="assets/img/water-company.png" alt="water" ng-show="card.companyType == 'water'">
+			<img src="assets/img/electricity-company.png" alt="electricity" ng-show="card.companyType == 'electricity'">
+			<h4>{{ card.name }}</h4>
+			<p ng-show="player.nbCompagnies == 1">{{ player.name }} possède UNE carte de compagnie de Service Public, le loyer est 4 fois le montant indiqué par les dés.</p>
+			<p ng-show="player.nbCompagnies == 2">{{ player.name }} possède DEUX cartes de compagnie de Service Public, le loyer est 10 fois le montant indiqué par les dés.</p>
+		</div>
+		<div class="pay" ng-show="!showCompagnieAsk">
+			<p>Payer <span>{{ rental }}</span> € à {{ player.name }} ?</p>
+		</div>
+		<div class="compagnie-ask" ng-show="showCompagnieAsk">
+			<p>Quel est le montant indiqué pas les dés ?</p>
+			<form name="compagnieForm"
+				ng-submit="compagnieDices(dice)">
+				<input type="tel" ng-model="dice" placeholder="Montant des dés">
+				<button type="submit">OK</button>
+				<div class="clear"></div>
+			</form>
+		</div>
+		<div class="action">
+			<button ng-show="!showCompagnieAsk" ng-click="payRental()">Payer</button>
+			<button ng-click="showModalPayRental = false">Annuler</button>
+		</div>
+	</div>
+</div>

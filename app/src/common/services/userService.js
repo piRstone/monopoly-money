@@ -22,6 +22,8 @@ angular.module('monopoly.userService', [])
 			user.name = response.data.name;
 			user.game_id = response.data.game_id;
 			user.credit = parseInt(response.data.credit);
+			user.nbGares = parseInt(response.data.nbGares);
+			user.nbCompagnies = parseInt(response.data.nbCompagnies);
 			var d = new Date();
 			d.setHours(d.getHours() + 1);
 			document.cookie = "user_id=" + userId + "; expires=" + d;

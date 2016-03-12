@@ -48,6 +48,10 @@
 					width: 100%;
 					tr {
 						margin-bottom: 4px;
+						&.bold {
+							font-weight: bold;
+							color: $green;
+						}
 						td {
 							padding: 2px 0;
 							&:nth-child(1) {
@@ -162,6 +166,10 @@
 				table {
 					width: 100%;
 					tr {
+						&.bold {
+							font-weight: bold;
+							color: $green;
+						}
 						td {
 							padding: 2px 0;
 							&:nth-child(1) {
@@ -180,6 +188,44 @@
 			p {
 				span {
 					font-weight: bold;
+				}
+			}
+		}
+		.pay {
+			text-align: center;
+			padding: 20px 0;
+			box-sizing: border-box;
+			margin: 10px;
+			border: 1px dashed #000;
+			p {
+				font-size: 20px;
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+		.compagnie-ask {
+			padding: 20px 0;
+			margin: 10px;
+			box-sizing: border-box;
+			border: 1px dashed #000;
+			text-align: center;
+			p {
+				margin: 10px 0;
+			}
+			form {
+				input {
+					display: inline-block;
+					padding: 10px;
+					border: 1px solid #eee;
+					width: 50%;
+				}
+				button {
+					display: inline-block;
+					padding: 10px;
+					background-color: $green;
+					border: none;
+					color: #fff;
 				}
 			}
 		}
