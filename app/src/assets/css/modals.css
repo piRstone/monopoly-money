@@ -270,45 +270,48 @@ body {
   padding: 10px;
   border: 1px solid #eee;
   width: 50%;
+  font-size: 14px;
 }
-/* line 223, ../../sass/modals.scss */
+/* line 224, ../../sass/modals.scss */
 .modalCard .m-box .compagnie-ask form button {
   display: inline-block;
   padding: 10px;
   background-color: #8BC34A;
   border: none;
   color: #fff;
+  font-size: 14px;
+  vertical-align: middle;
 }
-/* line 232, ../../sass/modals.scss */
+/* line 235, ../../sass/modals.scss */
 .modalCard .m-box .action {
   text-align: center;
   padding: 10px;
 }
-/* line 235, ../../sass/modals.scss */
+/* line 238, ../../sass/modals.scss */
 .modalCard .m-box .action button {
   border: none;
   color: #fff;
   padding: 15px;
   font-size: 18px;
 }
-/* line 240, ../../sass/modals.scss */
+/* line 243, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(1) {
   background-color: #8BC34A;
 }
-/* line 242, ../../sass/modals.scss */
+/* line 245, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(1):active {
   background-color: #71a436;
 }
-/* line 246, ../../sass/modals.scss */
+/* line 249, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(2) {
   background-color: #F44336;
 }
-/* line 248, ../../sass/modals.scss */
+/* line 251, ../../sass/modals.scss */
 .modalCard .m-box .action button:nth-child(2):active {
   background-color: #ea1c0d;
 }
 
-/* line 256, ../../sass/modals.scss */
+/* line 259, ../../sass/modals.scss */
 .modalAddMoney, .modalDelMoney {
   position: fixed;
   bottom: 60px;
@@ -320,7 +323,7 @@ body {
   box-sizing: border-box;
   padding: 10px;
 }
-/* line 268, ../../sass/modals.scss */
+/* line 271, ../../sass/modals.scss */
 .modalAddMoney .m form input, .modalDelMoney .m form input {
   height: 40px;
   border: 1px solid #fff;
@@ -329,7 +332,7 @@ body {
   color: #757575;
   vertical-align: middle;
 }
-/* line 276, ../../sass/modals.scss */
+/* line 279, ../../sass/modals.scss */
 .modalAddMoney .m form button, .modalDelMoney .m form button {
   border-radius: 50%;
   border: none;
@@ -341,24 +344,24 @@ body {
   padding-bottom: 9px;
   vertical-align: middle;
 }
-/* line 286, ../../sass/modals.scss */
+/* line 289, ../../sass/modals.scss */
 .modalAddMoney .m form button.add-money, .modalDelMoney .m form button.add-money {
   background-color: #8BC34A;
 }
-/* line 288, ../../sass/modals.scss */
+/* line 291, ../../sass/modals.scss */
 .modalAddMoney .m form button.add-money:active, .modalDelMoney .m form button.add-money:active {
   background-color: #71a436;
 }
-/* line 292, ../../sass/modals.scss */
+/* line 295, ../../sass/modals.scss */
 .modalAddMoney .m form button.del-money, .modalDelMoney .m form button.del-money {
   background-color: #F44336;
 }
-/* line 294, ../../sass/modals.scss */
+/* line 297, ../../sass/modals.scss */
 .modalAddMoney .m form button.del-money:active, .modalDelMoney .m form button.del-money:active {
   background-color: #ea1c0d;
 }
 
-/* line 302, ../../sass/modals.scss */
+/* line 305, ../../sass/modals.scss */
 .modalSetUser {
   position: fixed;
   top: 50%;
