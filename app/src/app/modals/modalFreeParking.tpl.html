@@ -1,0 +1,28 @@
+<div class="modalBackground" ng-show="showModalFreeParking" ng-click="showModalFreeParking = false"></div>
+<div class="modalCard" ng-show="showModalFreeParking">
+	<div class="m-box">
+		<div class="free-parking">
+			<img src="assets/img/free-parking.png" alt="free parking">
+			<h4>Parc gratuit</h4>
+			<h3>{{ amount }} €</h3>
+			<div ng-show="process == 0">
+				<p>Je suis tombé sur le parc gratuit</p>
+				<button class="yes" ng-click="process = process + 1">OUI</button>
+				<button class="no" ng-click="showModalFreeParking = false">NON</button>
+			</div>
+			<div ng-show="process == 1">
+				<p>Toucher les <span>{{ amount }} €</span> ?</p>
+				<button class="yes" ng-click="process = process + 1">BIEN SÛR</button>
+				<button class="no" ng-click="showModalFreeParking = false">NON</button>
+			</div>
+			<div ng-show="process == 2">
+				<p>Sûr ?</p>
+				<button class="yes" ng-click="getFreeParking()">CERTAIN</button>
+				<button class="no" ng-click="showModalFreeParking = false">NON</button>
+			</div>
+			<div ng-show="process == 3">
+				<h4>Bravo !</h4>
+			</div>
+		</div>
+	</div>
+</div>

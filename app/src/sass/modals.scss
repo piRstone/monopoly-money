@@ -232,6 +232,52 @@
 				}
 			}
 		}
+		.free-parking {
+			text-align: center;
+			img {
+				width: 50%;
+			}
+			h3 {
+				font-size: 22px;
+			}
+			h4 {
+				font-size: 18px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+			div {
+				padding: 20px 0;
+				margin: 10px;
+				background-color: whitesmoke;
+				border: 1px dashed;
+				p {
+					margin-bottom: 10px;
+					font-size: 16px;
+					span {
+						font-weight: bold;
+					}
+				}
+				button {
+					border: none;
+					color: #fff;
+					padding: 15px;
+					font-size: 18px;
+					&.yes {
+						background-color: $green;
+						&:active {
+							background-color: darken($green, 10%);
+						}
+					}
+					&.no {
+						background-color: $red;
+						&:active {
+							background-color: darken($red, 10%);
+						}
+					}
+				}
+			}
+		}
 		.action {
 			text-align: center;
 			padding: 10px;

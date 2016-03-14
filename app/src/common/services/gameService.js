@@ -144,6 +144,26 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var getFreeParking = function(success, error) {
+		var data = $.param({
+			user: UserService.user.id
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postFreeParking.php', data, config).then(function(response) {
+			if (response.status == 200) {
+				UserService.user.credit += UserService.freeParking;
+				UserService.freeParking = 0;
+			}
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
@@ -155,7 +175,8 @@ angular.module('monopoly.gameService', [])
 		buyHouse: buyHouse,
 		sellHouse: sellHouse,
 		payRental: payRental,
-		getFreeParkingAmount: getFreeParkingAmount
+		getFreeParkingAmount: getFreeParkingAmount,
+		getFreeParking: getFreeParking
 	};
 }])
 

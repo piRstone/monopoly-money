@@ -12,7 +12,7 @@ angular.module('monopoly.home', ['ui.router'])
 	});
 }])
 
-.controller('HomeCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
+.controller('HomeCtrl', ['$rootScope', '$scope', 'GameService', 'UserService', function($rootScope, $scope, GameService, UserService) {
 	$scope.user = UserService.user;
 	$scope.players = [];
 	$scope.freePark = 0;
@@ -35,6 +35,10 @@ angular.module('monopoly.home', ['ui.router'])
 	}, function() {});
 
 	GameService.getFreeParkingAmount();
+
+	$scope.showFreeParking = function() {
+		$rootScope.$emit('event:modalFreeParking', []);
+	}
 }])
 
 .controller('FooterCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
