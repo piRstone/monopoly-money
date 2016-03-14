@@ -3,6 +3,7 @@ angular.module('monopoly.userService', [])
 .factory('UserService', ['$rootScope', '$http', function($rootScope, $http) {
 	//var user = {id: 1, name: 'Pierre', game_id: 1, credit: 1490};
 	var user = {};
+	var freeParking = 0;
 
 	var getGamesAndUsers = function(success, error) {
 		$http.get('/data/getGamesAndUsers.php').then(function(response) {
@@ -68,6 +69,7 @@ angular.module('monopoly.userService', [])
 
 	return {
 		user: user,
+		freeParking: freeParking,
 		getGamesAndUsers: getGamesAndUsers,
 		setUserGame: setUserGame,
 		getUserInfos: getUserInfos,

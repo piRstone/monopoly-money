@@ -16,7 +16,13 @@ angular.module('monopoly.home', ['ui.router'])
 	$scope.user = UserService.user;
 	$scope.players = [];
 	$scope.freePark = 0;
-	$scope.freePark = GameService.freeParking;
+	$scope.freePark = UserService.freeParking;
+
+	$scope.$watch(function(){
+	    return UserService.freeParking;
+	}, function (newValue) {
+	    $scope.freePark = newValue;
+	});
 
 	UserService.getPlayers(function(response) {
 		for (i=0 ; i < response.length ; i++) {
