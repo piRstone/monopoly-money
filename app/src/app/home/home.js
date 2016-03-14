@@ -42,6 +42,10 @@ angular.module('monopoly.home', ['ui.router'])
 }])
 
 .controller('FooterCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
+	$scope.start = function() {
+		$scope.$emit('event:modalStart', []);
+	}
+
 	$scope.addMoney = function() {
 		$scope.$emit('event:modalAddMoney', []);
 	}

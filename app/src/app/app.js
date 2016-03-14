@@ -14,6 +14,7 @@ angular.module('monopoly', [
 	'monopoly.modalUserCard',
 	'monopoly.modalPayRental',
 	'monopoly.modalFreeParking',
+	'monopoly.modalStart',
 
 	'ui.router'
 ])
@@ -60,6 +61,10 @@ angular.module('monopoly', [
 			modalFreeParking: {
 				controller: 'ModalFreeParkingCtrl',
 				templateUrl: 'modals/modalFreeParking.tpl.html'
+			},
+			modalStart: {
+				controller: 'ModalStartCtrl',
+				templateUrl: 'modals/modalStart.tpl.html'
 			}
 	    }
 	});

@@ -164,6 +164,21 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var start = function(success, error) {
+		$http({
+			method: 'GET',
+			url: '/data/getStart.php',
+			params: {user: UserService.user.id}
+		}).then(function(response) {
+			if (response.status == 200) {
+				UserService.user.credit += 200;
+			}
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
@@ -176,7 +191,8 @@ angular.module('monopoly.gameService', [])
 		sellHouse: sellHouse,
 		payRental: payRental,
 		getFreeParkingAmount: getFreeParkingAmount,
-		getFreeParking: getFreeParking
+		getFreeParking: getFreeParking,
+		start: start
 	};
 }])
 

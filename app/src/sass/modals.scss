@@ -335,13 +335,27 @@
 				&.add-money {
 					background-color: $green;
 					&:active {
-						background-color: darken($green, 10%);
+						background-color: darken($green, 10);
 					}
 				}
 				&.del-money {
 					background-color: $red;
 					&:active {
-						background-color: darken($red, 10%);
+						background-color: darken($red, 10);
+					}
+				}
+				&.start {
+					border-radius: 4px;
+					width: 100%;
+					background-color: $plate-color;
+					background-image: url('../img/start.png');
+					background-size: 180px;
+					background-position: right;
+					background-repeat: no-repeat;
+					text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+					text-align: left;
+					&:active {
+						background-color: darken($plate-color, 10);
 					}
 				}
 			}

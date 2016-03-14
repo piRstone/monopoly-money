@@ -5,7 +5,7 @@ body {
   background-color: whitesmoke;
 }
 
-/* line 10, ../../sass/configuration.scss */
+/* line 13, ../../sass/configuration.scss */
 .clear {
   clear: both;
 }
@@ -85,16 +85,31 @@ footer button {
   padding-bottom: 9px;
 }
 /* line 72, ../../sass/home.scss */
+footer button.start {
+  bottom: 20px;
+  right: 150px;
+  background-color: #DAE9D4;
+  background-image: url("../img/start.png");
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #83b56f;
+}
+/* line 81, ../../sass/home.scss */
+footer button.start:active {
+  background-color: #bdd8b2;
+}
+/* line 85, ../../sass/home.scss */
 footer button.add-money {
   bottom: 20px;
   right: 80px;
   background-color: #8BC34A;
 }
-/* line 76, ../../sass/home.scss */
+/* line 89, ../../sass/home.scss */
 footer button.add-money:active {
   background-color: #71a436;
 }
-/* line 80, ../../sass/home.scss */
+/* line 93, ../../sass/home.scss */
 footer button.del-money {
   bottom: 20px;
   right: 10px;
@@ -103,7 +118,7 @@ footer button.del-money {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 87, ../../sass/home.scss */
+/* line 100, ../../sass/home.scss */
 footer button.del-money:active {
   background-color: #ea1c0d;
 }

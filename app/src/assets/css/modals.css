@@ -5,7 +5,7 @@ body {
   background-color: whitesmoke;
 }
 
-/* line 10, ../../sass/configuration.scss */
+/* line 13, ../../sass/configuration.scss */
 .clear {
   clear: both;
 }
@@ -418,8 +418,24 @@ body {
 .modalAddMoney .m form button.del-money:active, .modalDelMoney .m form button.del-money:active {
   background-color: #ea1c0d;
 }
+/* line 347, ../../sass/modals.scss */
+.modalAddMoney .m form button.start, .modalDelMoney .m form button.start {
+  border-radius: 4px;
+  width: 100%;
+  background-color: #DAE9D4;
+  background-image: url("../img/start.png");
+  background-size: 180px;
+  background-position: right;
+  background-repeat: no-repeat;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  text-align: left;
+}
+/* line 357, ../../sass/modals.scss */
+.modalAddMoney .m form button.start:active, .modalDelMoney .m form button.start:active {
+  background-color: #bdd8b2;
+}
 
-/* line 351, ../../sass/modals.scss */
+/* line 365, ../../sass/modals.scss */
 .modalSetUser {
   position: fixed;
   top: 50%;

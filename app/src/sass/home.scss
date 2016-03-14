@@ -69,6 +69,19 @@ footer {
 		height: 60px;
 		width: 60px;
 		padding-bottom: 9px;
+		&.start {
+			bottom: 20px;
+			right: 150px;
+			background-color: $plate-color;
+			background-image: url('../img/start.png');
+			background-size: 50px;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: 2px solid darken($plate-color, 30);
+			&:active {
+				background-color: darken($plate-color, 10%);
+			}
+		}
 		&.add-money {
 			bottom: 20px;
 			right: 80px;
