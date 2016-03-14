@@ -15,6 +15,9 @@ angular.module('monopoly.home', ['ui.router'])
 .controller('HomeCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {
 	$scope.user = UserService.user;
 	$scope.players = [];
+	$scope.freePark = 0;
+	$scope.freePark = GameService.freeParking;
+
 	UserService.getPlayers(function(response) {
 		for (i=0 ; i < response.length ; i++) {
 			var player = {};
@@ -24,6 +27,8 @@ angular.module('monopoly.home', ['ui.router'])
 			$scope.players.push(player);
 		}
 	}, function() {});
+
+	GameService.getFreeParkingAmount();
 }])
 
 .controller('FooterCtrl', ['$scope', 'GameService', 'UserService', function($scope, GameService, UserService) {

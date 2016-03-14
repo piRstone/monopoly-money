@@ -13,8 +13,11 @@ if ($_POST['user'] && $_POST['credit']) {
 	$newValue = $amount['credit'] - $credit;
 
 	$res = $bdd->exec("UPDATE users SET credit = $newValue WHERE id = $userId");
+	$res2 = $bdd->exec("UPDATE free_parking SET amount = amount + $credit");
 
-	echo json_encode($res);
+	if ($res == 1 && $res2 == 2) {
+		return http_response_code(200);
+	}
 
 	$qAmount->closeCursor();
 }

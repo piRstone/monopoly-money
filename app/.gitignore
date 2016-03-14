@@ -2,6 +2,7 @@ build
 node_modules
 vendor
 trash
+src/assets/css
 Error.log
 .DS_Store
 .sass-cache

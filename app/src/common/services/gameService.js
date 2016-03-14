@@ -3,6 +3,7 @@ angular.module('monopoly.gameService', [])
 .factory('GameService', ['$rootScope', '$http', 'UserService', function($rootScope, $http, UserService) {
 	var amount = 1490;
 	var properties = [];
+	var freeParking = 0;
 
 	var getProperties = function() {
 		$http.get('/data/getProperties.php').then(function(response) {
@@ -65,9 +66,7 @@ angular.module('monopoly.gameService', [])
 			}
 		}
 		$http.post('/data/postDelMoney.php', data, config).then(function(response) {
-			if (response.data > 0) {
-				UserService.user.credit -= parseInt(amount);
-			}
+			UserService.user.credit -= parseInt(amount);
 			success(response.data);
 		}, function(responseError) {
 			error();
@@ -137,9 +136,18 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var getFreeParkingAmount = function(success, error) {
+		$http.get('/data/getFreeParkingAmount.php').then(function(response) {
+			freeParking = response.data;
+		},function(responseError) {
+			console.error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
+		freeParking: freeParking,
 		getProperties, getProperties,
 		getBuyableProperties: getBuyableProperties,
 		buyProperty: buyProperty,
@@ -147,7 +155,8 @@ angular.module('monopoly.gameService', [])
 		delMoney: delMoney,
 		buyHouse: buyHouse,
 		sellHouse: sellHouse,
-		payRental: payRental
+		payRental: payRental,
+		getFreeParkingAmount: getFreeParkingAmount
 	};
 }])
 

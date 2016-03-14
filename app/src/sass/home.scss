@@ -31,6 +31,22 @@
 							display: block;
 						}
 					}
+					&.free-parking {
+						position: relative;
+						border: 4px solid #E3271E;
+						background-image: url('../img/free-parking.png');
+						background-size: 70px 70px;
+						background-position: center 6px;
+						background-repeat: no-repeat;
+						span {
+							position: absolute;
+							top: 80px;
+							left: 50%;
+							transform: translateX(-50%);
+							font-size: 20px;
+							width: 100%;
+						}
+					}
 				}
 			}
 		}
@@ -64,7 +80,10 @@ footer {
 		&.del-money {
 			bottom: 20px;
 			right: 10px;
-			background-color: $red;
+			background-image: url('../img/pay.png');
+			background-size: 60px 60px;
+			background-position: center;
+			background-repeat: no-repeat;
 			&:active {
 				background-color: darken($red, 10%);
 			}

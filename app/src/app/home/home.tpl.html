@@ -10,7 +10,11 @@
 					<span class="name">{{ player.name }}</span>
 					<span><span>{{ player.nbProperties }} <span ng-if="player.nbProperties == 1">terrain</span><span ng-if="player.nbProperties != 1">terrains</span></span>
 				</a>
-				
+			</li>
+			<li>
+				<a class="free-parking" href="" ng-click="showFreeParking()">
+					<span>{{ freePark }} €</span>
+				</a>
 			</li>
 			<li class="clear"></li>
 		</ul>
@@ -18,5 +22,5 @@
 </div>
 <footer ng-controller="FooterCtrl">
 	<button class="add-money" ng-click="addMoney()">+</button>
-	<button class="del-money" ng-click="delMoney()">-</button>
+	<button class="del-money" ng-click="delMoney()"></button>
 </footer>
