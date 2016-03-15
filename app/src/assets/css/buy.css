@@ -31,17 +31,18 @@ body {
   padding: 20px 10px;
   font-size: 20px;
   color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
-/* line 20, ../../sass/buy.scss */
+/* line 21, ../../sass/buy.scss */
 #buy .buy-prop.black {
   color: #000;
 }
-/* line 23, ../../sass/buy.scss */
+/* line 24, ../../sass/buy.scss */
 #buy .buy-prop p {
   float: left;
   width: 80%;
 }
-/* line 27, ../../sass/buy.scss */
+/* line 28, ../../sass/buy.scss */
 #buy .buy-prop .price {
   float: right;
 }

@@ -17,7 +17,7 @@ angular.module('monopoly.modalBirthday', [])
 			$scope.done = true;
 			$timeout(function() {
 				$scope.showModalBirthday = false;
-			}, 1000);
+			}, 1500);
 		}, function(){});
 	}
 

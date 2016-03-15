@@ -12,6 +12,8 @@ angular.module('monopoly.modalAddMoney', [])
 	$scope.addMoney = function(amount) {
 		GameService.addMoney(amount, function(response) {
 			$scope.showModalAddMoney = false;
+			$scope.amount = "";
+			$scope.delForm.$setPristine();
 		}, function(){});
 	}
 

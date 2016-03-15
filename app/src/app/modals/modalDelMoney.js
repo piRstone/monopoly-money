@@ -12,6 +12,8 @@ angular.module('monopoly.modalDelMoney', [])
 	$scope.delMoney = function(amount) {
 		GameService.delMoney(amount, function(response) {
 			$scope.showModalDelMoney = false;
+			$scope.amount = "";
+			$scope.addForm.$setPristine();
 		}, function(){});
 	}
 

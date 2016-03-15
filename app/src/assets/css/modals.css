@@ -498,7 +498,3 @@ body {
   box-sizing: border-box;
   padding: 10px;
 }
-/* line 419, ../../sass/modals.scss */
-.modalSetUser .u form input {
-  height: 20px;
-}
