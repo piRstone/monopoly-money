@@ -122,3 +122,17 @@ footer button.del-money {
 footer button.del-money:active {
   background-color: #ea1c0d;
 }
+/* line 104, ../../sass/home.scss */
+footer button.birthday {
+  bottom: 20px;
+  right: 10px;
+  background-color: #2196F3;
+  background-image: url("../img/birthday.png");
+  background-size: 35px 35px;
+  background-position: center 10px;
+  background-repeat: no-repeat;
+}
+/* line 112, ../../sass/home.scss */
+footer button.birthday:active {
+  background-color: #0c7cd5;
+}

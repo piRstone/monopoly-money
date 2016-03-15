@@ -15,6 +15,7 @@ angular.module('monopoly', [
 	'monopoly.modalPayRental',
 	'monopoly.modalFreeParking',
 	'monopoly.modalStart',
+	'monopoly.modalBirthday',
 
 	'ui.router'
 ])
@@ -65,6 +66,10 @@ angular.module('monopoly', [
 			modalStart: {
 				controller: 'ModalStartCtrl',
 				templateUrl: 'modals/modalStart.tpl.html'
+			},
+			modalBirthday: {
+				controller: 'ModalBirthdayCtrl',
+				templateUrl: 'modals/modalBirthday.tpl.html'
 			}
 	    }
 	});

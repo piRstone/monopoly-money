@@ -90,6 +90,10 @@ angular.module('monopoly.properties', ['ui.router'])
 		$scope.$emit('event:modalPayRental', [$scope.properties[index], $scope.player]);
 	}
 
+	$scope.showBirthday = function() {
+		$scope.$emit('event:modalBirthday', [$scope.player]);
+	}
+
 }])
 
 ;

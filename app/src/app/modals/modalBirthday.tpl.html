@@ -1,0 +1,14 @@
+<div class="modalBackground" ng-show="showModalBirthday" ng-click="showModalBirthday = false"></div>
+<div class="modalBirthday" ng-show="showModalBirthday">
+	<div class="b">
+		<div ng-show="!done">
+			<img src="assets/img/birthday_blue.png" alt="birthday">
+			<h4>C'est l'anniversaire de {{ player.name }} !</h4>
+			<p>Donnez lui <span>10 €</span> pour lui faire plaisir !</p>
+			<button ng-click="giveGift()">Donner 10 €</button> 
+		</div>
+		<div ng-show="done">
+			<h3>Merci !</h3>
+		</div>
+	</div>
+</div>

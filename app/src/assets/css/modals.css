@@ -23,13 +23,13 @@ body {
 
 /* line 12, ../../sass/modals.scss */
 .modalCard {
-  position: fixed;
+  position: absolute;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   z-index: 6;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #CACACA;
@@ -436,6 +436,56 @@ body {
 }
 
 /* line 365, ../../sass/modals.scss */
+.modalBirthday {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CACACA;
+  width: 80%;
+}
+/* line 377, ../../sass/modals.scss */
+.modalBirthday .b {
+  text-align: center;
+}
+/* line 379, ../../sass/modals.scss */
+.modalBirthday .b img {
+  width: 40%;
+}
+/* line 382, ../../sass/modals.scss */
+.modalBirthday .b h3 {
+  font-size: 22px;
+}
+/* line 385, ../../sass/modals.scss */
+.modalBirthday .b h4 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+/* line 391, ../../sass/modals.scss */
+.modalBirthday .b p {
+  margin: 30px 0;
+}
+/* line 394, ../../sass/modals.scss */
+.modalBirthday .b button {
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #2196F3;
+}
+/* line 400, ../../sass/modals.scss */
+.modalBirthday .b button:active {
+  background-color: #51adf6;
+}
+
+/* line 406, ../../sass/modals.scss */
 .modalSetUser {
   position: fixed;
   top: 50%;
@@ -447,4 +497,8 @@ body {
   border-radius: 5px;
   box-sizing: border-box;
   padding: 10px;
+}
+/* line 419, ../../sass/modals.scss */
+.modalSetUser .u form input {
+  height: 20px;
 }

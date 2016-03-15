@@ -179,6 +179,26 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var birthday = function(playerId, success, error) {
+		var data = $.param({
+			user: UserService.user.id,
+			player: playerId
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postBirthday.php', data, config).then(function(response) {
+			if (response.status == 200) {
+				UserService.user.credit -= 10;
+			}
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
@@ -192,7 +212,8 @@ angular.module('monopoly.gameService', [])
 		payRental: payRental,
 		getFreeParkingAmount: getFreeParkingAmount,
 		getFreeParking: getFreeParking,
-		start: start
+		start: start,
+		birthday: birthday
 	};
 }])
 
