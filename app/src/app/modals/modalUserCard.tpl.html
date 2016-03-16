@@ -103,7 +103,9 @@
 			<p>€ <span>{{ card.hypotheque }}</span></p>
 		</div>
 		<div class="action">
-			<button ng-click="showUserCard = false">Fermer</button>
+			<a class="hypothec" ng-click="hypothecAction()"></a>
+			<button class="green" ng-click="showUserCard = false">Fermer</button>
+			<a class="swap" ng-click="swapProperty()"></a>
 		</div>
 	</div>
 </div>

@@ -281,11 +281,23 @@
 		.action {
 			text-align: center;
 			padding: 10px;
+			.hypothec {
+				height: 40px;
+				width: 40px;
+				display: inline-block;
+				margin-right: 20px;
+				background-image: url('../img/hypothec.png');
+				background-size: 35px 35px;
+				background-position: center;
+				background-repeat: no-repeat;
+				vertical-align: middle;
+			}
 			button {
 				border: none;
 				color: #fff;
 				padding: 15px;
 				font-size: 18px;
+				vertical-align: middle;
 				&:nth-child(1) {
 					background-color: $green;
 					&:active {
@@ -298,6 +310,23 @@
 						background-color: darken($red, 10%);
 					}
 				}
+				&.green {
+					background-color: $green;
+					&:active {
+						background-color: darken($green, 10%);
+					}
+				}
+			}
+			.swap {
+				height: 40px;
+				width: 40px;
+				display: inline-block;
+				margin-left: 20px;
+				background-image: url('../img/swap.png');
+				background-size: 35px 35px;
+				background-position: center;
+				background-repeat: no-repeat;
+				vertical-align: middle;
 			}
 		}
 	}
