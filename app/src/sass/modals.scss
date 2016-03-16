@@ -87,7 +87,7 @@
 					}
 				}
 			}
-			.confirm-buy-or-sell {
+			.confirm-buy-or-sell, .hypothec {
 				text-align: center;
 				padding: 50px 0;
 				p {
@@ -178,6 +178,34 @@
 							&:nth-child(2) {
 								font-weight: bold;
 							}
+						}
+					}
+				}
+			}
+		}
+		.hypothec-property {
+			text-align: center;
+			padding: 50px 0;
+			p {
+				font-size: 16px;
+			}
+			div {
+				padding: 20px 0;
+				button {
+					border: none;
+					color: #fff;
+					padding: 15px;
+					font-size: 18px;
+					&:nth-child(1) {
+						background-color: $green;
+						&:active {
+							background-color: darken($green, 10%);
+						}
+					}
+					&:nth-child(2) {
+						background-color: $red;
+						&:active {
+							background-color: darken($red, 10%);
 						}
 					}
 				}

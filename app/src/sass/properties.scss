@@ -26,13 +26,20 @@
 			text-align: center;
 			box-sizing: border-box;
 			.property {
-				box-sizing: border-box;
 				border-radius: 5px;
 				width: 100%;
 				padding: 5px;
 				background-color: #fff;
 				box-shadow: 0 0 10px rgba(0,0,0,.25);
+				&.hypothecated {
+					opacity: .5;
+					.wrap {
+						border: 3px solid #f00;
+						border-radius: 3px;
+					}
+				}
 				.wrap {
+					box-sizing: border-box;
 					border: 1px solid #000;
 					height: 130px;
 					.head {

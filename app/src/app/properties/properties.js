@@ -48,7 +48,9 @@ angular.module('monopoly.properties', ['ui.router'])
 	getUserProperties();
 
 	$scope.showProperty = function(index) {
-		$scope.$emit('event:modalUserCard', [$scope.properties[index]]);
+		if ($scope.properties[index].hypothecated == false) {
+			$scope.$emit('event:modalUserCard', [$scope.properties[index]]);
+		}
 	}
 
 }])

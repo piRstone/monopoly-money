@@ -6,7 +6,7 @@
 				<p>Titre de propriété</p>
 				<p>{{ card.name }}</p>
 			</div>
-			<div class="prices" ng-show="!confirmBuy && !confirmSell">
+			<div class="prices" ng-show="!confirmBuy && !confirmSell && !hypothec && !swap">
 				<table>
 					<tbody>
 						<tr>
@@ -33,7 +33,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="houses" ng-show="!confirmBuy && !confirmSell">
+			<div class="houses" ng-show="!confirmBuy && !confirmSell && !hypothec && !swap">
 				<table>
 					<tbody>
 						<tr><td>Prix des Maisons</td><td><span>€</span> {{ card.house }} chacune</td></tr>
@@ -55,7 +55,7 @@
 					<button type="button" ng-click="confirmSell = false">Annuler</button>
 				</div>
 			</div>
-			<div class="add-houses">
+			<div class="add-houses" ng-show="!hypothec && !swap">
 				<ul>
 					<li ng-class="{'green': card.nbHouses > 0}" ng-click="buyHouse(1)"></li>
 					<li ng-class="{'green': card.nbHouses > 1}" ng-click="buyHouse(2)"></li>
@@ -66,7 +66,7 @@
 				<p ng-show="toMuchError">Une maison à la fois</p>
 			</div>
 		</div>
-		<div class="gare" ng-show="card.type == 'gare'">
+		<div class="gare" ng-show="card.type == 'gare' && !hypothec && !swap">
 			<img src="assets/img/train.png" alt="train">
 			<h4>{{ card.name }}</h4>
 			<div class="table">
@@ -91,21 +91,28 @@
 				</table>
 			</div>
 		</div>
-		<div class="company" ng-show="card.type == 'compagnie'">
+		<div class="company" ng-show="card.type == 'compagnie' && !hypothec && !swap">
 			<img src="assets/img/water-company.png" alt="water" ng-show="card.companyType == 'water'">
 			<img src="assets/img/electricity-company.png" alt="electricity" ng-show="card.companyType == 'electricity'">
 			<h4>{{ card.name }}</h4>
 			<p>Si l'on possède UNE carte de compagnie de Service Public, le loyer est 4 fois le montant indiqué par les dés.</p>
 			<p>Si l'on possède DEUX cartes de compagnie de Service Public, le loyer est 10 fois le montant indiqué par les dés.</p>
 		</div>
+		<div class="hypothec-property" ng-show="hypothec">
+			<p>Hypothéquer cette propriété pour {{ card.hypotheque }} € ?</p>
+			<div>
+				<button type="button" ng-click="hypothecAction()">Hypothéquer</button>
+				<button type="button" ng-click="hypothec = false">Annuler</button>
+			</div>
+		</div>
 		<div class="hypo">
 			<p>Valeur hypothécaire du terrain :</p>
 			<p>€ <span>{{ card.hypotheque }}</span></p>
 		</div>
 		<div class="action">
-			<a class="hypothec" ng-click="hypothecAction()"></a>
+			<a class="hypothec" ng-click="hypothec = !hypothec"></a>
 			<button class="green" ng-click="showUserCard = false">Fermer</button>
-			<a class="swap" ng-click="swapProperty()"></a>
+			<a class="swap" ng-click="swap != swap"></a>
 		</div>
 	</div>
 </div>

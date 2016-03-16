@@ -10,6 +10,8 @@ angular.module('monopoly.modalUserCard', [])
 		$scope.confirmSell = false;
 		$scope.nbSell = 0;
 		$scope.priceOfHouses = 0;
+		$scope.hypothec = false;
+		$scope.swap = false;
 	});
 
 	$scope.toMuchError = false;
@@ -44,6 +46,19 @@ angular.module('monopoly.modalUserCard', [])
 		}, function(error) {
 			console.error(error.status);
 		});
+	}
+
+	$scope.hypothecAction = function() {
+		GameService.hypothecProperty($scope.card, function() {
+			$scope.card.hypothecated = true;
+			$scope.showUserCard = false;
+		}, function(error) {
+			console.error(error.status);
+		});
+	}
+
+	$scope.swapProperty = function() {
+
 	}
 
 	$scope.$on('$destroy', eventModalUserCard);

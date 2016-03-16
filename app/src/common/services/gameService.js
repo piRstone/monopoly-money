@@ -199,6 +199,26 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var hypothecProperty = function(_property, success, error) {
+		var data = $.param({
+			user: UserService.user.id,
+			property: _property.id
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postHypothecProperty.php', data, config).then(function(response) {
+			if (response.status == 200) {
+				UserService.user.credit += parseInt(_property.hypotheque);
+			}
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
@@ -213,7 +233,8 @@ angular.module('monopoly.gameService', [])
 		getFreeParkingAmount: getFreeParkingAmount,
 		getFreeParking: getFreeParking,
 		start: start,
-		birthday: birthday
+		birthday: birthday,
+		hypothecProperty: hypothecProperty
 	};
 }])
 
