@@ -37,7 +37,9 @@ angular.module('monopoly.home', ['ui.router'])
 	GameService.getFreeParkingAmount();
 
 	$scope.showFreeParking = function() {
-		$rootScope.$emit('event:modalFreeParking', []);
+		if ($scope.freePark > 0) {
+			$rootScope.$emit('event:modalFreeParking', []);
+		}
 	}
 }])
 

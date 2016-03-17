@@ -1,6 +1,6 @@
 angular.module('monopoly.modalUserCard', [])
 
-.controller('ModalUserCardCtrl', ['$rootScope', '$scope', '$location', 'GameService', function($rootScope, $scope, $location, GameService) {
+.controller('ModalUserCardCtrl', ['$rootScope', '$scope', '$location', '$timeout', 'GameService', 'UserService', function($rootScope, $scope, $location, $timeout, GameService, UserService) {
 	$scope.card = {};
 
 	var eventModalUserCard = $rootScope.$on('event:modalUserCard', function(event, data) {
@@ -12,6 +12,8 @@ angular.module('monopoly.modalUserCard', [])
 		$scope.priceOfHouses = 0;
 		$scope.hypothec = false;
 		$scope.swap = false;
+		$scope.swapDone = false;
+		$scope.players = [];
 	});
 
 	$scope.toMuchError = false;
@@ -57,8 +59,29 @@ angular.module('monopoly.modalUserCard', [])
 		});
 	}
 
-	$scope.swapProperty = function() {
+	$scope.showSwap = function() {
+		if ($scope.card.nbHouses == 0) {
+			$scope.players.splice(0, $scope.players.length);
+			UserService.getPlayers(function(response) {
+				for (i=0 ; i < response.length ; i++) {
+					if (response[i].id != UserService.user.id) {
+						$scope.players.push(response[i]);
+					}
+				}
+				$scope.swap = true;
+			}, function() {});
+		}
+	}
 
+	$scope.swapProperty = function(index) {
+		GameService.swapProperty($scope.card, $scope.players[index], function() {
+			$scope.swapDone = true;
+			$timeout(function() {
+				$scope.card.hide = true;
+				$scope.swap = false;
+				$scope.showUserCard = false;
+			}, 1500);
+		}, function() {});
 	}
 
 	$scope.$on('$destroy', eventModalUserCard);

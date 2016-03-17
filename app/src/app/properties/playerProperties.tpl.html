@@ -4,7 +4,7 @@
 	</div>
 	<ul>
 		<li ng-repeat="property in properties">
-			<div class="property" ng-click="showProperty($index)">
+			<div class="property" ng-click="showProperty($index)" ng-class="{'hypothecated': property.hypothecated == true}">
 				<div class="wrap">
 					<div class="head" ng-style="{'background-color': property.color}"></div>
 					<div class="body">

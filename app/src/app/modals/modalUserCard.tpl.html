@@ -108,6 +108,21 @@
 				<button type="button" ng-click="hypothec = false">Annuler</button>
 			</div>
 		</div>
+		<div class="swap-property" ng-show="swap">
+			<div ng-show="!swapDone">
+				<p>Échanger cette propriété avec un autre joueur</p>
+				<p class="sub">Choisissez à quel joueur donner cette propriété</p>
+				<ul>
+					<li ng-repeat="player in players" ng-click="swapProperty($index)">{{ player.name }}</li>
+				</ul>
+				<div>
+					<button type="button" ng-click="swap = false">Annuler</button>
+				</div>
+			</div>
+			<div ng-show="swapDone">
+				<p>FAIT !</p>
+			</div>
+		</div>
 		<div class="hypo">
 			<p>Valeur hypothécaire du terrain :</p>
 			<p>€ <span>{{ card.hypotheque }}</span></p>
@@ -115,7 +130,7 @@
 		<div class="action">
 			<a class="hypothec" ng-click="hypothec = !hypothec"></a>
 			<button class="green" ng-click="showUserCard = false">Fermer</button>
-			<a class="swap" ng-click="swap != swap"></a>
+			<a class="swap" ng-click="showSwap()" ng-class="{'disabled': card.nbHouses > 0}"></a>
 		</div>
 	</div>
 </div>

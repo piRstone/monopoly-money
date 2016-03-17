@@ -219,6 +219,23 @@ angular.module('monopoly.gameService', [])
 		});
 	}
 
+	var swapProperty = function(card, _player, success, error) {
+		var data = $.param({
+			property: card.id,
+			player: _player.id
+		});
+		var config = {
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+			}
+		}
+		$http.post('/data/postSwapProperty.php', data, config).then(function(response) {
+			success();
+		}, function(responseError) {
+			error(responseError);
+		});
+	}
+
 	return {
 		amount: amount,
 		properties: properties,
@@ -234,7 +251,8 @@ angular.module('monopoly.gameService', [])
 		getFreeParking: getFreeParking,
 		start: start,
 		birthday: birthday,
-		hypothecProperty: hypothecProperty
+		hypothecProperty: hypothecProperty,
+		swapProperty: swapProperty
 	};
 }])
 
