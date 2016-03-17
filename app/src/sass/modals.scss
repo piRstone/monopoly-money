@@ -118,6 +118,16 @@
 			.add-houses {
 				width: 100%;
 				ul {
+					&.full-houses {
+						li {
+							width: 20%;
+						}
+					}
+					&.hotel {
+						li {
+							width: 100%;
+						}
+					}
 					li {
 						float: left;
 						width: 25%;
@@ -129,6 +139,14 @@
 						background-repeat: no-repeat;
 						background-position: center;
 						opacity: .3;
+						&.hotel {
+							background-image: url('../img/hotel.png');
+							background-size: 50px 43px;
+							&.red {
+								background-image: url('../img/hotel_red.png');
+								opacity: 1;
+							}
+						}
 						&.green {
 							background-image: url('../img/house_green.png');
 							opacity: 1;

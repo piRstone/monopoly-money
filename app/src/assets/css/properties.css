@@ -83,7 +83,11 @@ body {
 #properties ul li .property .wrap .houses {
   width: 100%;
 }
-/* line 61, ../../sass/properties.scss */
+/* line 62, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses ul.hotel li {
+  width: 100%;
+}
+/* line 66, ../../sass/properties.scss */
 #properties ul li .property .wrap .houses ul li {
   float: left;
   width: 25%;
@@ -95,12 +99,18 @@ body {
   background-position: center;
   opacity: .3;
 }
-/* line 71, ../../sass/properties.scss */
+/* line 76, ../../sass/properties.scss */
 #properties ul li .property .wrap .houses ul li.green {
   background-image: url("../img/house_green.png");
   opacity: 1;
 }
-/* line 75, ../../sass/properties.scss */
+/* line 80, ../../sass/properties.scss */
+#properties ul li .property .wrap .houses ul li.hotel {
+  background-image: url("../img/hotel_red.png");
+  background-size: 35px 28px;
+  opacity: 1;
+}
+/* line 85, ../../sass/properties.scss */
 #properties ul li .property .wrap .houses ul li:last-child {
   background: none;
   display: none;

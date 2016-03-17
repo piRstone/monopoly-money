@@ -58,6 +58,11 @@
 					.houses {
 						width: 100%;
 						ul {
+							&.hotel {
+								li {
+									width: 100%;
+								}
+							}
 							li {
 								float: left;
 								width: 25%;
@@ -70,6 +75,11 @@
 								opacity: .3;
 								&.green {
 									background-image: url('../img/house_green.png');
+									opacity: 1;
+								}
+								&.hotel {
+									background-image: url('../img/hotel_red.png');
+									background-size: 35px 28px;
 									opacity: 1;
 								}
 								&:last-child {

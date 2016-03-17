@@ -42,25 +42,28 @@
 				</table>
 			</div>
 			<div class="confirm-buy-or-sell" ng-show="confirmBuy">
-				<p>Acheter une maison pour {{ card.house }} € ?</p>
+				<p ng-show="card.nbHouses < 4">Acheter une maison pour {{ card.house }} € ?</p>
+				<p ng-show="card.nbHouses == 4">Acheter un hôtel pour 4 maisons + {{ card.house }} € ?</p>
 				<div>
 					<button type="button" ng-click="confirmBuyHouse()">Acheter</button>
 					<button type="button" ng-click="confirmBuy = false">Annuler</button>
 				</div>
 			</div>
 			<div class="confirm-buy-or-sell" ng-show="confirmSell">
-				<p>Vendre {{ nbSell }} <span ng-show="nbSell == 1">maison</span><span ng-show="nbSell > 1">maisons</span> pour {{ priceOfHouses }} € ?</p>
+				<p ng-show="card.nbHouses < 5">Vendre {{ nbSell }} <span ng-show="nbSell == 1">maison</span><span ng-show="nbSell > 1">maisons</span> pour {{ priceOfHouses }} € ?</p>
+				<p ng-show="card.nbHouses == 5">Vendre un hôtel pour {{ card.house }} € ?</p>
 				<div>
 					<button type="button" ng-click="confirmSellHouse()">Vendre</button>
 					<button type="button" ng-click="confirmSell = false">Annuler</button>
 				</div>
 			</div>
 			<div class="add-houses" ng-show="!hypothec && !swap">
-				<ul>
-					<li ng-class="{'green': card.nbHouses > 0}" ng-click="buyHouse(1)"></li>
-					<li ng-class="{'green': card.nbHouses > 1}" ng-click="buyHouse(2)"></li>
-					<li ng-class="{'green': card.nbHouses > 2}" ng-click="buyHouse(3)"></li>
-					<li ng-class="{'green': card.nbHouses > 3}" ng-click="buyHouse(4)"></li>
+				<ul ng-class="{'full-houses': card.nbHouses == 4, 'hotel': card.nbHouses == 5}">
+					<li ng-show="card.nbHouses < 5" ng-class="{'green': card.nbHouses > 0}" ng-click="buyHouse(1)"></li>
+					<li ng-show="card.nbHouses < 5" ng-class="{'green': card.nbHouses > 1}" ng-click="buyHouse(2)"></li>
+					<li ng-show="card.nbHouses < 5" ng-class="{'green': card.nbHouses > 2}" ng-click="buyHouse(3)"></li>
+					<li ng-show="card.nbHouses < 5" ng-class="{'green': card.nbHouses > 3}" ng-click="buyHouse(4)"></li>
+					<li ng-show="card.nbHouses >= 4" class="hotel" ng-class="{'red': card.nbHouses > 4}" ng-click="buyHouse(5)"></li>
 					<li class="clear"></li>
 				</ul>
 				<p ng-show="toMuchError">Une maison à la fois</p>

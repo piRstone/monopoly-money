@@ -11,11 +11,12 @@
 						<p>{{ property.name }}</p>
 					</div>
 					<div class="houses" ng-show="property.type == 'terrain'">
-						<ul>
-							<li ng-class="{'green': property.nbHouses > 0}"></li>
-							<li ng-class="{'green': property.nbHouses > 1}"></li>
-							<li ng-class="{'green': property.nbHouses > 2}"></li>
-							<li ng-class="{'green': property.nbHouses > 3}"></li>
+						<ul ng-class="{'hotel': property.nbHouses == 5}">
+							<li ng-show="property.nbHouses < 5" ng-class="{'green': property.nbHouses > 0}"></li>
+							<li ng-show="property.nbHouses < 5" ng-class="{'green': property.nbHouses > 1}"></li>
+							<li ng-show="property.nbHouses < 5" ng-class="{'green': property.nbHouses > 2}"></li>
+							<li ng-show="property.nbHouses < 5" ng-class="{'green': property.nbHouses > 3}"></li>
+							<li ng-show="property.nbHouses == 5" class="hotel" ng-class="{'red': property.nbHouses > 4}"></li>
 							<li class="clear"></li>
 						</ul>
 					</div>
