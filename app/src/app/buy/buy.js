@@ -40,9 +40,9 @@ angular.module('monopoly.buy', ['ui.router'])
 				obj.hypotheque = response[i].hypotheque;
 				obj.type = response[i].type;
 				if (obj.type == 'compagnie') {
-					if (obj.name.search('eaux') != -1) {
+					if (obj.name.indexOf('eaux') != -1) {
 						obj.companyType = 'water';
-					} else if (obj.name.search('électricité') != -1) {
+					} else if (obj.name.indexOf('électricité') != -1) {
 						obj.companyType = 'electricity';
 					}
 				}

@@ -20,6 +20,8 @@ if ($_GET['user']) {
 
 	$res->closeCursor();
 
+} else {
+	return http_response_code(403);
 }
 
 ?>

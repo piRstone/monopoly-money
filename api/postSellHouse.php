@@ -24,7 +24,12 @@ if ($_POST['user'] && $_POST['property'] && $_POST['nbSell']) {
 	$res = $bdd->exec("UPDATE users SET credit = $newCredit WHERE id = $userId");
 
 	// Add new house to property
-	$nbHouses -= $nb;
+	if ($nbHouses == 5) {
+		$nbHouses = 0;
+	} else {
+		$nbHouses -= $nb;
+	}
+
 	$res = $bdd->exec("UPDATE properties SET nbHouses = $nbHouses WHERE id = $propertyId");
 
 	echo json_encode($res);

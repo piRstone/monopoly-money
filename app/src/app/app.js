@@ -80,22 +80,15 @@ angular.module('monopoly', [
 }])
 
 
-.controller('AppCtrl',['$rootScope', '$scope', 'UserService', '$timeout', function($rootScope, $scope, UserService, $timeout) {
+.controller('AppCtrl',['$rootScope', '$scope', 'UserService', '$timeout', 'CookieService', function($rootScope, $scope, UserService, $timeout, CookieService) {
 	if (UserService.user.id == undefined) {
-		if (document.cookie.length > 0) {
-			var co = document.cookie.split(';');
-			if (co[0].indexOf('user_id') != -1) {
-				var t = co[0];
-				var u = t.substring(8);
-			}
-			if (co[1].indexOf('game_id') != -1) {
-				var f = co[1];
-				var g = f.substring(9);
-			}
+		if (CookieService.getItem('user_id') != "" && CookieService.getItem('user_id') != undefined && CookieService.getItem('user_id') != "" && CookieService.getItem('user_id') != undefined) {
+			var g = CookieService.getItem('game_id');
+			var u = CookieService.getItem('user_id');
 			UserService.setUserGame(g, u, function() {}, function(error) {console.error(error);});
 		} else {
 			$timeout(function() {
-				$scope.$emit('event:modalSetUser', []);	
+				$scope.$emit('event:modalSetUser', []);
 			}, 1000);
 		}
 	}

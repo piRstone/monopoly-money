@@ -126,7 +126,7 @@ angular.module('monopoly.gameService', [])
 				'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
 			}
 		}
-		$http.post('/data/postpayRental.php', data, config).then(function(response) {
+		$http.post('/data/postPayRental.php', data, config).then(function(response) {
 			if (response.data > 0) {
 				UserService.user.credit -= _rental;
 			}

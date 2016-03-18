@@ -1,6 +1,6 @@
 angular.module('monopoly.userService', [])
 
-.factory('UserService', ['$rootScope', '$http', function($rootScope, $http) {
+.factory('UserService', ['$rootScope', '$http', 'CookieService', function($rootScope, $http, CookieService) {
 	//var user = {id: 1, name: 'Pierre', game_id: 1, credit: 1490};
 	var user = {};
 	var freeParking = 0;
@@ -25,10 +25,8 @@ angular.module('monopoly.userService', [])
 			user.credit = parseInt(response.data.credit);
 			user.nbGares = parseInt(response.data.nbGares);
 			user.nbCompagnies = parseInt(response.data.nbCompagnies);
-			var d = new Date();
-			d.setHours(d.getHours() + 1);
-			document.cookie = "user_id=" + userId + "; expires=" + d;
-			document.cookie = "game_id=" + gameId + "; expires=" + d;
+			CookieService.setItem('user_id', userId);
+			CookieService.setItem('game_id', gameId);
 			success();
 		}, function(responseError) {
 			error(responseError);
@@ -75,6 +73,36 @@ angular.module('monopoly.userService', [])
 		getUserInfos: getUserInfos,
 		getPlayers: getPlayers,
 		getUserProperties: getUserProperties
+	};
+}])
+
+.factory('CookieService', [function() {
+	var getItem = function(name) {
+		var name = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) 
+		{
+			var c = ca[i].trim();
+			if (c.indexOf(name)==0)
+				return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+
+	var setItem = function(name, value) {
+		var d = new Date();
+			d.setHours(d.getHours() + 1);
+		var expires = "expires="+d.toGMTString();
+		document.cookie = name + "=" + value + "; path=/; " + expires;
+	}
+
+	var removeItem = function(name) {
+		document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;';
+	}
+	return {
+		getItem: getItem,
+		setItem: setItem,
+		removeItem: removeItem
 	};
 }])
 
