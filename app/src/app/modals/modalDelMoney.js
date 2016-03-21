@@ -1,12 +1,14 @@
 angular.module('monopoly.modalDelMoney', [])
 
-.controller('ModalDelMoneyCtrl', ['$rootScope', '$scope', '$location', 'GameService', function($rootScope, $scope, $location, GameService) {
+.controller('ModalDelMoneyCtrl', ['$rootScope', '$scope', '$location', '$timeout', 'GameService', function($rootScope, $scope, $location, $timeout, GameService) {
 
 	$scope.showModalDelMoney = false;
 
 	var eventModalDelMoney = $rootScope.$on('event:modalDelMoney', function(event, data) {
 		$scope.showModalDelMoney = !$scope.showModalDelMoney;
-		$('#del-money').focus();
+		$timeout(function() {
+			$('#del-money').focus();
+		}, 10);
 	});
 
 	$scope.delMoney = function(amount) {

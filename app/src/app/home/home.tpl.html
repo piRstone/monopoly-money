@@ -2,13 +2,15 @@
 	<div class="user-container">
 		<ul>
 			<li ng-repeat="player in players">
-				<a ng-if="player.id == user.id" ng-href="#/properties/user">
+				<a ng-if="player.id == user.id" class="me" ng-href="#/properties/user">
 					<span class="name">{{ player.name }}</span>
-					<span><span>{{ player.nbProperties }} <span ng-if="player.nbProperties == 1">terrain</span><span ng-if="player.nbProperties != 1">terrains</span></span>
+					<span>{{ player.nbProperties }} <span ng-if="player.nbProperties == 1">terrain</span><span ng-if="player.nbProperties != 1">terrains</span></span>
+					<span class="credit">{{ user.credit }} €</span>
 				</a>
 				<a ng-if="player.id != user.id" ng-href="#/properties/player/{{ player.id }}">
 					<span class="name">{{ player.name }}</span>
-					<span><span>{{ player.nbProperties }} <span ng-if="player.nbProperties == 1">terrain</span><span ng-if="player.nbProperties != 1">terrains</span></span>
+					<span>{{ player.nbProperties }} <span ng-if="player.nbProperties == 1">terrain</span><span ng-if="player.nbProperties != 1">terrains</span></span>
+					<span class="credit">{{ player.credit }} €</span>
 				</a>
 			</li>
 			<li>

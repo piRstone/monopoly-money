@@ -52,7 +52,7 @@
 						<tr ng-class="{'bold': player.nbGares == 3}">
 							<td>Si {{ player.name }} a 3 Gares</td><td>100</td>
 						</tr>
-						<tr ng-class="{'bold': player.nbGares == 3}">
+						<tr ng-class="{'bold': player.nbGares == 4}">
 							<td>Si {{ player.name }} a 4 Gares</td><td>200</td>
 						</tr>
 					</tbody>
@@ -73,7 +73,7 @@
 			<p>Quel est le montant indiqué pas les dés ?</p>
 			<form name="compagnieForm"
 				ng-submit="compagnieDices(dice)">
-				<input type="tel" ng-model="dice" placeholder="Montant des dés">
+				<input type="tel" id="dice" ng-model="dice" placeholder="Montant des dés">
 				<button type="submit">OK</button>
 				<div class="clear"></div>
 			</form>

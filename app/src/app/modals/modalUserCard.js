@@ -36,15 +36,21 @@ angular.module('monopoly.modalUserCard', [])
 		GameService.buyHouse($scope.card, function(response) {
 			$scope.confirmBuy = false;
 			$scope.card.nbHouses++;
+			$scope.showUserCard = false;
 		}, function(error) {
 			console.error(error.status);
 		});
 	}
 
 	$scope.confirmSellHouse = function() {
+		var currentNbHouses = $scope.card.nbHouses;
 		GameService.sellHouse($scope.card, $scope.nbSell, function(response) {
 			$scope.confirmSell = false;
-			$scope.card.nbHouses -= $scope.nbSell;
+			if (currentNbHouses == 5) {
+				$scope.card.nbHouses = 0;
+			} else {
+				$scope.card.nbHouses -= $scope.nbSell;
+			}
 		}, function(error) {
 			console.error(error.status);
 		});

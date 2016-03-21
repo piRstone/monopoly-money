@@ -30,6 +30,7 @@ angular.module('monopoly.home', ['ui.router'])
 			player.id = response[i].id;
 			player.name = response[i].name;
 			player.nbProperties = response[i].nbProperties;
+			player.credit = response[i].credit;
 			$scope.players.push(player);
 		}
 	}, function() {});

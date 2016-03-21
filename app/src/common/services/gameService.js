@@ -221,6 +221,7 @@ angular.module('monopoly.gameService', [])
 
 	var swapProperty = function(card, _player, success, error) {
 		var data = $.param({
+			user: UserService.user.id,
 			property: card.id,
 			player: _player.id
 		});

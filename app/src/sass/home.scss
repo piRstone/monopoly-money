@@ -21,6 +21,9 @@
 					text-align: center;
 					padding: 44px 0;
 					margin: auto;
+					&.me {
+						border: 4px solid $blue;
+					}
 					&:active {
 						background-color: darken(whitesmoke, 10%);
 					}
@@ -28,6 +31,9 @@
 						&.name {
 							font-size: 18px;
 							font-weight: bold;
+							display: block;
+						}
+						&.credit {
 							display: block;
 						}
 					}

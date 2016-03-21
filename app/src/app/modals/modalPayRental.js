@@ -1,6 +1,6 @@
 angular.module('monopoly.modalPayRental', [])
 
-.controller('ModalPayRentalCtrl', ['$rootScope', '$scope', '$location', 'GameService', function($rootScope, $scope, $location, GameService) {
+.controller('ModalPayRentalCtrl', ['$rootScope', '$scope', '$location', '$timeout', 'GameService', function($rootScope, $scope, $location, $timeout, GameService) {
 	$scope.card = {};
 	$scope.player = {};
 	var property = {};
@@ -39,6 +39,9 @@ angular.module('monopoly.modalPayRental', [])
 			}
 		} else if (property.type == 'compagnie') {
 			$scope.showCompagnieAsk = true;
+			$timeout(function() {
+				$('#dice').focus();
+			}, 10);
 		}
 	});
 
@@ -48,6 +51,7 @@ angular.module('monopoly.modalPayRental', [])
 		} else if ($scope.player.nbCompagnies == 2) {
 			$scope.rental = 10 * dice;
 		}
+		$scope.dice == "";
 		$scope.showCompagnieAsk = false;
 	}
 

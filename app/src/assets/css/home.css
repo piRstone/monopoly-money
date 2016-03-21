@@ -36,16 +36,24 @@ body {
   margin: auto;
 }
 /* line 24, ../../sass/home.scss */
+#home .user-container ul li a.me {
+  border: 4px solid #2196F3;
+}
+/* line 27, ../../sass/home.scss */
 #home .user-container ul li a:active {
   background-color: gainsboro;
 }
-/* line 28, ../../sass/home.scss */
+/* line 31, ../../sass/home.scss */
 #home .user-container ul li a span.name {
   font-size: 18px;
   font-weight: bold;
   display: block;
 }
-/* line 34, ../../sass/home.scss */
+/* line 36, ../../sass/home.scss */
+#home .user-container ul li a span.credit {
+  display: block;
+}
+/* line 40, ../../sass/home.scss */
 #home .user-container ul li a.free-parking {
   position: relative;
   border: 4px solid #E3271E;
@@ -54,7 +62,7 @@ body {
   background-position: center 6px;
   background-repeat: no-repeat;
 }
-/* line 41, ../../sass/home.scss */
+/* line 47, ../../sass/home.scss */
 #home .user-container ul li a.free-parking span {
   position: absolute;
   top: 80px;
@@ -65,14 +73,14 @@ body {
 }
 
 /* Footer style */
-/* line 57, ../../sass/home.scss */
+/* line 63, ../../sass/home.scss */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-/* line 62, ../../sass/home.scss */
+/* line 68, ../../sass/home.scss */
 footer button {
   position: absolute;
   border-radius: 50%;
@@ -84,7 +92,7 @@ footer button {
   width: 60px;
   padding-bottom: 9px;
 }
-/* line 72, ../../sass/home.scss */
+/* line 78, ../../sass/home.scss */
 footer button.start {
   bottom: 20px;
   right: 150px;
@@ -95,21 +103,21 @@ footer button.start {
   background-repeat: no-repeat;
   border: 2px solid #83b56f;
 }
-/* line 81, ../../sass/home.scss */
+/* line 87, ../../sass/home.scss */
 footer button.start:active {
   background-color: #bdd8b2;
 }
-/* line 85, ../../sass/home.scss */
+/* line 91, ../../sass/home.scss */
 footer button.add-money {
   bottom: 20px;
   right: 80px;
   background-color: #8BC34A;
 }
-/* line 89, ../../sass/home.scss */
+/* line 95, ../../sass/home.scss */
 footer button.add-money:active {
   background-color: #71a436;
 }
-/* line 93, ../../sass/home.scss */
+/* line 99, ../../sass/home.scss */
 footer button.del-money {
   bottom: 20px;
   right: 10px;
@@ -118,11 +126,11 @@ footer button.del-money {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 100, ../../sass/home.scss */
+/* line 106, ../../sass/home.scss */
 footer button.del-money:active {
   background-color: #ea1c0d;
 }
-/* line 104, ../../sass/home.scss */
+/* line 110, ../../sass/home.scss */
 footer button.birthday {
   bottom: 20px;
   right: 10px;
@@ -132,7 +140,7 @@ footer button.birthday {
   background-position: center 10px;
   background-repeat: no-repeat;
 }
-/* line 112, ../../sass/home.scss */
+/* line 118, ../../sass/home.scss */
 footer button.birthday:active {
   background-color: #0c7cd5;
 }

@@ -13,8 +13,6 @@ if ($_POST['user'] && $_POST['player']) {
 	if ($res == 1 && $res2 == 2) {
 		return http_response_code(200);
 	}
-
-	$qAmount->closeCursor();
 }
 
 ?>
