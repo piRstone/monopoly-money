@@ -67,6 +67,7 @@
 			<p ng-show="player.nbCompagnies == 2">{{ player.name }} possède DEUX cartes de compagnie de Service Public, le loyer est 10 fois le montant indiqué par les dés.</p>
 		</div>
 		<div class="pay" ng-show="!showCompagnieAsk">
+			<p class="doubled" ng-show="card.doubled == true">{{ player.name }} a tous les terrains <span ng-style="{'background-color': card.color}"></span></p>
 			<p>Payer <span>{{ rental }}</span> € à {{ player.name }} ?</p>
 		</div>
 		<div class="compagnie-ask" ng-show="showCompagnieAsk">

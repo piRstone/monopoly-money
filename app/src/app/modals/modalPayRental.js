@@ -12,6 +12,10 @@ angular.module('monopoly.modalPayRental', [])
 		$scope.rental = 0;
 		$scope.showModalPayRental = true;
 		$scope.showCompagnieAsk = false;
+		$scope.doubled = false;
+		if (property.doubled == true) {
+			$scope.doubled = true;
+		}
 
 		if (property.type == 'terrain') {
 			if (property.nbHouses == 0) {
@@ -26,6 +30,10 @@ angular.module('monopoly.modalPayRental', [])
 				$scope.rental = property.h4;
 			} else if (property.nbHouses == 5) {
 				$scope.rental = property.h5;
+			}
+
+			if (property.doubled == true) {
+				$scope.rental = $scope.rental * 2;
 			}
 		} else if (property.type == 'gare') {
 			if ($scope.player.nbGares == 1) {
