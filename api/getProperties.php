@@ -1,6 +1,7 @@
 <?php
+include 'config.php';
 
-$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 $res = $bdd->query('SELECT * FROM properties');
 

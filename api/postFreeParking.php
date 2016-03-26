@@ -1,10 +1,11 @@
 <?php
+include 'config.php';
 
 if ($_POST['user']) {
 
 	$userId = $_POST['user'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	$res = $bdd->query('SELECT amount FROM free_parking');
 	$res2 = $res->fetch();

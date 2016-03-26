@@ -13,6 +13,7 @@ angular.module('monopoly.buy', ['ui.router'])
 }])
 
 .controller('BuyCtrl', ['$rootScope', '$scope', 'GameService', 'UserService', function($rootScope, $scope, GameService, UserService) {
+	$scope.user = UserService.user;
 	$scope.showCard = false;
 	$scope.properties = [];
 	$scope.card = {};
@@ -54,7 +55,7 @@ angular.module('monopoly.buy', ['ui.router'])
 
 	$scope.showPropertyCard = function(index) {
 		if (UserService.user.credit < $scope.properties[index].price) {
-			console.error('pas assez d\'argent');
+			console.error('Pas assez d\'argent');
 		} else {
 			$rootScope.$emit('event:modalCard', [$scope.properties[index]]);
 		}

@@ -21,6 +21,9 @@
 		&.black {
 			color: #000;
 		}
+		&.disabled {
+			opacity: .3;
+		}
 		p {
 			float: left;
 			width: 80%;

@@ -92,6 +92,8 @@ footer {
 			bottom: 20px;
 			right: 80px;
 			background-color: $green;
+			padding: 10px;
+			padding-bottom: 14px;
 			&:active {
 				background-color: darken($green, 10);
 			}

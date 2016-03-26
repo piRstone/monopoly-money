@@ -38,11 +38,15 @@ body {
   color: #000;
 }
 /* line 24, ../../sass/buy.scss */
+#buy .buy-prop.disabled {
+  opacity: .3;
+}
+/* line 27, ../../sass/buy.scss */
 #buy .buy-prop p {
   float: left;
   width: 80%;
 }
-/* line 28, ../../sass/buy.scss */
+/* line 31, ../../sass/buy.scss */
 #buy .buy-prop .price {
   float: right;
 }

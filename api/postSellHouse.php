@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 if ($_POST['user'] && $_POST['property'] && $_POST['nbSell']) {
 
@@ -6,7 +7,7 @@ if ($_POST['user'] && $_POST['property'] && $_POST['nbSell']) {
 	$propertyId = $_POST['property'];
 	$nb = $_POST['nbSell'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	// Get property
 	$req = $bdd->query("SELECT * FROM properties WHERE id = $propertyId");
@@ -19,11 +20,11 @@ if ($_POST['user'] && $_POST['property'] && $_POST['nbSell']) {
 	$resp = $req->fetch();
 	$currentCredit = $resp['credit'];
 	$amount = ($price / 2) * $nb;
-	$newCredit = $currentCredit - $amount;
+	$newCredit = $currentCredit + $amount;
 	// Set new user credit
 	$res = $bdd->exec("UPDATE users SET credit = $newCredit WHERE id = $userId");
 
-	// Add new house to property
+	// Del houses to property
 	if ($nbHouses == 5) {
 		$nbHouses = 0;
 	} else {

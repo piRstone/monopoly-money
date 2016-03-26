@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 if ($_POST['rental'] && $_POST['player'] && $_POST['user']) {
 
@@ -6,7 +7,7 @@ if ($_POST['rental'] && $_POST['player'] && $_POST['user']) {
 	$playerId = $_POST['player'];
 	$userId = $_POST['user'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	// Get user credit
 	$req = $bdd->query("SELECT credit FROM users WHERE id = $userId");

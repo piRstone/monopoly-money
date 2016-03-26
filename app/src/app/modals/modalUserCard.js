@@ -19,9 +19,14 @@ angular.module('monopoly.modalUserCard', [])
 	$scope.toMuchError = false;
 	$scope.buyHouse = function(count) {
 		$scope.toMuchError = false;
+		$scope.notEnoughMoney = false;
 		var nbHouses = parseInt($scope.card.nbHouses);
 		if (count == nbHouses+1) {
-			$scope.confirmBuy = true;
+			if (UserService.user.credit > $scope.card.house) {
+				$scope.confirmBuy = true;
+			} else {
+				$scope.notEnoughMoney = true;
+			}
 		} else if (count > nbHouses+1) {
 			$scope.toMuchError = true;
 		} else if (count <= nbHouses) {

@@ -32,7 +32,7 @@ angular.module('monopoly.modalPayRental', [])
 				$scope.rental = property.h5;
 			}
 
-			if (property.doubled == true) {
+			if (property.nbHouses == 0 && property.doubled == true) {
 				$scope.rental = $scope.rental * 2;
 			}
 		} else if (property.type == 'gare') {
@@ -64,6 +64,7 @@ angular.module('monopoly.modalPayRental', [])
 	}
 
 	$scope.payRental = function() {
+		$('header').css('background-color', '#22D299');
 		GameService.payRental($scope.rental, $scope.player, function() {
 			$scope.showModalPayRental = false;
 			$location.path('/home');

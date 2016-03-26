@@ -1,11 +1,12 @@
 <?php
+include 'config.php';
 
 if ($_POST['user'] && $_POST['property']) {
 
 	$userId = $_POST['user'];
 	$propertyId = $_POST['property'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	$qHypotheque = $bdd->query("SELECT hypotheque FROM properties WHERE id = $propertyId");
 	$rHypotheque = $qHypotheque->fetch();

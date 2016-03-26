@@ -1,10 +1,11 @@
 <?php
+include 'config.php';
 
 if ($_GET['user']) {
 
 	$userId = $_GET['user'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	$res = $bdd->query("SELECT * FROM properties WHERE owner_id = $userId ORDER BY type DESC");
 

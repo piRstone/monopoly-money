@@ -1,6 +1,6 @@
 <div id="buy">
 	<div class="title">Acheter une propriété</div>	
-	<div class="buy-prop" ng-repeat="property in properties" ng-style="{'background-color': property.color}" ng-class="{'black': property.color == '#ffffff' || property.color == '#fffd03'}" ng-click="showPropertyCard($index)">
+	<div class="buy-prop" ng-repeat="property in properties" ng-style="{'background-color': property.color}" ng-class="{'black': property.color == '#ffffff' || property.color == '#fffd03', 'disabled': user.credit < property.price}" ng-click="showPropertyCard($index)">
 		<p>{{ property.name }}</p> <span class="price">{{ property.price }} €</span>
 		<div class="clear"></div>
 	</div>

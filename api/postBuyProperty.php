@@ -1,11 +1,12 @@
 <?php
+include 'config.php';
 
 if ($_POST['user'] && $_POST['property']) {
 
 	$userId = $_POST['user'];
 	$propertyId = $_POST['property'];
 
-	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=monopoly;charset=utf8', 'root', $password);
 
 	// Get property
 	$req = $bdd->query("SELECT * FROM properties WHERE id = $propertyId");
