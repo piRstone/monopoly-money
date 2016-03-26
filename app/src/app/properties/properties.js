@@ -89,7 +89,9 @@ angular.module('monopoly.properties', ['ui.router'])
 	getUserProperties();
 
 	$scope.showProperty = function(index) {
-		$scope.$emit('event:modalPayRental', [$scope.properties[index], $scope.player]);
+		if ($scope.properties[index].hypothecated == false) {
+			$scope.$emit('event:modalPayRental', [$scope.properties[index], $scope.player]);
+		}
 	}
 
 	$scope.showBirthday = function() {

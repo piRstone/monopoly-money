@@ -71,6 +71,9 @@ angular.module('monopoly.modalPayRental', [])
 		}, function(error) {
 			if (error.status == 401) {
 				$('header').css('background-color', '#F44336');
+				$timeout(function() {
+					$('header').css('background-color', '#22D299');
+				}, 800);
 			}
 		});
 	}

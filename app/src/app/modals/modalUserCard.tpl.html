@@ -68,6 +68,7 @@
 				</ul>
 				<p ng-show="toMuchError">Une maison à la fois</p>
 				<p ng-show="notEnoughMoney">Pas assez d'argent</p>
+				<p ng-show="sellBeforeHypothec">Vendez d'abord les maisons</p>
 			</div>
 		</div>
 		<div class="gare" ng-show="card.type == 'gare' && !hypothec && !swap">
@@ -129,7 +130,7 @@
 			<p>€ <span>{{ card.hypotheque }}</span></p>
 		</div>
 		<div class="action">
-			<a class="hypothec" ng-click="hypothec = !hypothec"></a>
+			<a class="hypothec" ng-click="showHypothec()"></a>
 			<button class="green" ng-click="showUserCard = false">Fermer</button>
 			<a class="swap" ng-click="showSwap()" ng-class="{'disabled': card.nbHouses > 0}"></a>
 		</div>

@@ -61,6 +61,17 @@ angular.module('monopoly.modalUserCard', [])
 		});
 	}
 
+	$scope.showHypothec = function() {
+		if ($scope.card.nbHouses > 0) {
+			$scope.sellBeforeHypothec = true;
+			$timeout(function() {
+				$scope.sellBeforeHypothec = false;
+			}, 1000);
+		} else {
+			$scope.hypothec = !$scope.hypothec;
+		}
+	}
+
 	$scope.hypothecAction = function() {
 		GameService.hypothecProperty($scope.card, function() {
 			$scope.card.hypothecated = true;
