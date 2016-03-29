@@ -24,7 +24,7 @@ angular.module('monopoly.properties', ['ui.router'])
 	});
 }])
 
-.controller('UserPropertiesCtrl', ['$rootScope', '$scope', 'GameService', 'UserService', function($rootScope, $scope, GameService, UserService) {
+.controller('UserPropertiesCtrl', ['$rootScope', '$scope', '$timeout', 'GameService', 'UserService', function($rootScope, $scope, $timeout, GameService, UserService) {
 
 	$scope.user = UserService.user;
 	$scope.properties = [];
@@ -45,7 +45,9 @@ angular.module('monopoly.properties', ['ui.router'])
 			console.error(error.status);
 		});
 	}
-	getUserProperties();
+	$timeout(function() {
+		getUserProperties();
+	}, 10);
 
 	$scope.showProperty = function(index) {
 		if ($scope.properties[index].hypothecated == false) {
